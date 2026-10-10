@@ -179,6 +179,27 @@
     .contact{padding:28px}
     .logo{height:26px}
   }
+  /* pricing */
+  .bill{margin:0 0 26px}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .plan.best{border:2px solid var(--brand);box-shadow:0 18px 40px rgba(22,128,247,.14)}
+  .plan h3{font-size:21px;font-weight:900;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .plan .tag{font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;background:var(--brand-soft);color:#1D4ED8}
+  .plan .for{color:var(--muted);font-size:14.5px;margin-top:4px}
+  .price{margin:18px 0 4px;display:flex;align-items:baseline;gap:6px;direction:ltr;justify-content:flex-end}
+  [dir=ltr] .price{justify-content:flex-start}
+  .price b{font:700 38px Inter,sans-serif;letter-spacing:-1px;color:var(--ink)}
+  .price small{font:600 14px Inter,Tajawal,sans-serif;color:var(--muted)}
+  .per{font-size:13.5px;color:var(--teal);font-weight:700;min-height:20px}
+  .plan ul{list-style:none;margin:16px 0 22px;display:grid;gap:9px;flex:1;align-content:start}
+  .plan li{display:flex;gap:9px;font-size:15px;color:var(--ink)}
+  .plan li::before{content:"";flex:none;width:17px;height:17px;margin-top:4px;border-radius:6px;background:var(--brand-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231680F7' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+  .plan li.star::before{background-color:#FEF5E7}
+  .plan .btn{justify-content:center}
+  .price-note{color:var(--muted);font-size:14px;margin-top:18px}
+  .price-note a{color:var(--brand);font-weight:700}
+  @media (max-width:880px){.plans{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
@@ -189,6 +210,7 @@
     <a href="#top" aria-label="DGOTIX"><img class="logo" src="logo.svg" alt="DGOTIX"></a>
     <div class="nav-links">
       <a href="#products"><span data-ar>المنتجات</span><span data-en>Products</span></a>
+      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span></a>
       <a href="#analytics"><span data-ar>التحليلات</span><span data-en>Analytics</span></a>
       <a href="#markets"><span data-ar>الأسواق</span><span data-en>Markets</span></a>
       <a href="#why"><span data-ar>لماذا DGOTIX</span><span data-en>Why DGOTIX</span></a>
@@ -286,6 +308,77 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ Pricing ============ -->
+  <section id="pricing" style="padding-top:20px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span data-ar>أسعار سمارت بدجت</span><span data-en>SmartBudget pricing</span></h2>
+        <p><span data-ar>ابدأ مجاناً بلا بطاقة. رقِّ متى احتجت، وألغِ في أي وقت.</span><span data-en>Start free, no card needed. Upgrade when you need to, cancel any time.</span></p>
+      </div>
+      <div class="bill">
+        <div class="seg" role="group" aria-label="Billing period">
+          <button type="button" data-period="yearly" aria-pressed="true"><span data-ar>سنوي (وفّر حتى 35%)</span><span data-en>Yearly (save up to 35%)</span></button>
+          <button type="button" data-period="monthly" aria-pressed="false"><span data-ar>شهري</span><span data-en>Monthly</span></button>
+        </div>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <h3><span data-ar>المجانية</span><span data-en>Free</span></h3>
+          <p class="for"><span data-ar>لتبدأ وتنظّم مصاريفك</span><span data-en>To start and get organized</span></p>
+          <div class="price"><b>$0</b></div>
+          <div class="per"><span data-ar>مجاناً دائماً</span><span data-en>Free forever</span></div>
+          <ul>
+            <li><span data-ar>تسجيل المصاريف والدخل بلا حدود</span><span data-en>Unlimited expense and income tracking</span></li>
+            <li><span data-ar>محفظتان بعملة واحدة · 5 ميزانيات · هدف واحد</span><span data-en>2 wallets in one currency · 5 budgets · 1 goal</span></li>
+            <li><span data-ar>تقارير الشهر الحالي والسابق</span><span data-en>Reports for this month and last</span></li>
+            <li><span data-ar>حاسبة الزكاة وقفل التطبيق</span><span data-en>Zakat calculator and app lock</span></li>
+            <li><span data-ar>5 إجابات من المستشار الذكي و3 مسوحات سحابية للتجربة</span><span data-en>5 AI answers and 3 cloud scans to try</span></li>
+          </ul>
+          <a class="btn btn-ghost" href="https://smartbudget.dgotix.com/"><span data-ar>ابدأ مجاناً</span><span data-en>Start free</span></a>
+        </article>
+        <article class="plan">
+          <h3><span data-ar>الأساسية</span><span data-en>Basic</span></h3>
+          <p class="for"><span data-ar>للاستعمال اليومي والمغتربين</span><span data-en>For everyday use and expats</span></p>
+          <div class="price" data-m="4.99" data-y="39.99"><b>$39.99</b><small data-u></small></div>
+          <div class="per" data-pm="3.33"></div>
+          <ul>
+            <li><span data-ar>كل ما في المجانية</span><span data-en>Everything in Free</span></li>
+            <li><span data-ar>محافظ بكل العملات بلا حدود</span><span data-en>Unlimited wallets in every currency</span></li>
+            <li><span data-ar>ميزانيات وأهداف وديون وجمعيات بلا حدود</span><span data-en>Unlimited budgets, goals, debts and darets</span></li>
+            <li><span data-ar>كل فترات التقارير ولأي سنة</span><span data-en>Every report period, any year</span></li>
+            <li><span data-ar>السعر الموازي لأسعار الصرف</span><span data-en>Parallel exchange rates</span></li>
+            <li><span data-ar>مزامنة بين الجوال والكمبيوتر</span><span data-en>Sync between phone and computer</span></li>
+            <li><span data-ar>تفاصيل الصحة المالية وتقسيم الراتب الذكي</span><span data-en>Health details and smart salary split</span></li>
+            <li><span data-ar>25 إجابة ذكية و15 مسحاً سحابياً شهرياً</span><span data-en>25 AI answers and 15 cloud scans a month</span></li>
+          </ul>
+          <a class="btn btn-ghost" href="https://smartbudget.dgotix.com/#/plans"><span data-ar>اختر الأساسية</span><span data-en>Choose Basic</span></a>
+        </article>
+        <article class="plan best">
+          <h3><span data-ar>الاحترافية</span><span data-en>Pro</span> <span class="tag"><span data-ar>الأفضل قيمة</span><span data-en>Best value</span></span></h3>
+          <p class="for"><span data-ar>للدخل المتعدد والاستثمار</span><span data-en>For multiple incomes and investing</span></p>
+          <div class="price" data-m="8.99" data-y="69.99"><b>$69.99</b><small data-u></small></div>
+          <div class="per" data-pm="5.83"></div>
+          <ul>
+            <li><span data-ar>كل ما في الأساسية</span><span data-en>Everything in Basic</span></li>
+            <li class="star"><span data-ar>تصدير التقارير PDF</span><span data-en>PDF report export</span></li>
+            <li class="star"><span data-ar>الرسم السنوي ومقارنة الأشهر</span><span data-en>Yearly trend chart</span></li>
+            <li class="star"><span data-ar>التنبيهات الذكية</span><span data-en>Smart alerts</span></li>
+            <li class="star"><span data-ar>الذهب والعملات الرقمية والسلع</span><span data-en>Gold, crypto and commodities</span></li>
+            <li class="star"><span data-ar>محفظة المشاريع والاستثمار</span><span data-en>Projects and investment portfolio</span></li>
+            <li><span data-ar>100 إجابة ذكية و50 مسحاً سحابياً شهرياً</span><span data-en>100 AI answers and 50 cloud scans a month</span></li>
+            <li><span data-ar>دعم بأولوية</span><span data-en>Priority support</span></li>
+          </ul>
+          <a class="btn btn-primary" href="https://smartbudget.dgotix.com/#/plans"><span data-ar>اختر الاحترافية</span><span data-en>Choose Pro</span></a>
+        </article>
+      </div>
+      <p class="price-note">
+        <span data-ar>الأسعار بالدولار الأمريكي، وقد تكون أقل في بلدك؛ يظهر السعر النهائي بعملتك عند الدفع، وتُضاف الضرائب حيث تنطبق. الدفع آمن عبر Paddle. اطّلع على <a href="https://smartbudget.dgotix.com/#/terms">شروط الاستخدام وسياسة الاسترجاع</a>.</span>
+        <span data-en>Prices in US dollars and may be lower in your country; the final price shows in your currency at checkout, with tax where it applies. Secure payments by Paddle. See the <a href="https://smartbudget.dgotix.com/#/terms?lang=en">terms and refund policy</a>.</span>
+      </p>
+    </div>
+  </section>
+
 
 
   <!-- Analytics -->
@@ -404,6 +497,7 @@
     <img src="logo.svg" alt="DGOTIX">
     <nav>
       <a href="https://smartbudget.dgotix.com/">SmartBudget</a>
+      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span></a>
       <a href="https://smartbudget.dgotix.com/#/privacy"><span data-ar>سياسة الخصوصية</span><span data-en>Privacy</span></a>
       <a href="https://smartbudget.dgotix.com/#/terms"><span data-ar>شروط الاستخدام</span><span data-en>Terms</span></a>
     </nav>
@@ -527,6 +621,26 @@
   var rz; window.addEventListener('resize', function () { tip.classList.remove('on'); clearTimeout(rz); rz = setTimeout(render, 120); });
   render();
 })();
+
+  // Pricing: yearly / monthly switch.
+  (function () {
+    var btns = document.querySelectorAll('#pricing .seg button');
+    function show(period) {
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.period === period)); });
+      var ar = document.documentElement.lang === 'ar';
+      document.querySelectorAll('#pricing .price[data-m]').forEach(function (el) {
+        var y = period === 'yearly';
+        el.querySelector('b').textContent = '$' + (y ? el.dataset.y : el.dataset.m);
+        el.querySelector('[data-u]').textContent = y ? (ar ? '/ سنة' : '/ year') : (ar ? '/ شهر' : '/ month');
+        var per = el.nextElementSibling;
+        per.textContent = y ? (ar ? 'أي ' + per.dataset.pm + '$ شهرياً' : 'that is $' + per.dataset.pm + ' a month') : '';
+      });
+      window.__period = period;
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.period); }); });
+    show('yearly');
+    document.getElementById('lang').addEventListener('click', function () { setTimeout(function () { show(window.__period || 'yearly'); }, 0); });
+  })();
 </script>
 </body>
 </html>
