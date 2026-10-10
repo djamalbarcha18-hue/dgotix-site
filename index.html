@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DGOTIX — حلول إنتاجية رقمية | Digital Productivity Solutions</title>
+<meta name="description" content="DGOTIX تبني تطبيقات عربية وعالمية بسيطة تساعدك على تنظيم مالك ووقتك. أول منتجاتنا: سمارت بدجت، تطبيق الميزانية الذكي. DGOTIX builds simple, bilingual apps that help you organise your money and time — starting with SmartBudget.">
+<link rel="canonical" href="https://dgotix.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dgotix.com/">
+<meta property="og:title" content="DGOTIX — Digital Productivity Solutions">
+<meta property="og:description" content="تطبيقات عربية وعالمية بسيطة لتنظيم مالك ووقتك · Simple bilingual apps for your money and time.">
+<meta property="og:image" content="https://dgotix.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="smartbudget-icon.png">
+<style>
+  @font-face{font-family:Tajawal;src:url(fonts/Tajawal-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
+  @font-face{font-family:Tajawal;src:url(fonts/Tajawal-Medium.ttf) format('truetype');font-weight:500;font-display:swap}
+  @font-face{font-family:Tajawal;src:url(fonts/Tajawal-Bold.ttf) format('truetype');font-weight:700;font-display:swap}
+  @font-face{font-family:Tajawal;src:url(fonts/Tajawal-ExtraBold.ttf) format('truetype');font-weight:800;font-display:swap}
+  @font-face{font-family:Tajawal;src:url(fonts/Tajawal-Black.ttf) format('truetype');font-weight:900;font-display:swap}
+  @font-face{font-family:Inter;src:url(fonts/Inter-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
+  @font-face{font-family:Inter;src:url(fonts/Inter-Medium.ttf) format('truetype');font-weight:500;font-display:swap}
+  @font-face{font-family:Inter;src:url(fonts/Inter-SemiBold.ttf) format('truetype');font-weight:600;font-display:swap}
+  @font-face{font-family:Inter;src:url(fonts/Inter-SemiBold.ttf) format('truetype');font-weight:700;font-display:swap}
+  :root{
+    --bg:#F7F9FC; --surface:#FFFFFF; --soft:#EEF4FB; --mint:#E8F5F0;
+    --ink:#0F172A; --body:#475569; --muted:#64748B; --line:#E2E8F0;
+    --brand:#1680F7; --brand-soft:#DCEBFE; --teal:#0F9F7A; --amber:#B7791F;
+    --shadow:0 10px 30px rgba(15,23,42,.06), 0 2px 6px rgba(15,23,42,.04);
+    --radius:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{font-family:Tajawal,Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  html[lang=en] body{font-family:Inter,Tajawal,system-ui,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  html:not([lang=en]) [data-en]{display:none!important} html[lang=en] [data-ar]{display:none!important}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:rgba(247,249,252,.82);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid rgba(226,232,240,.7)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .logo{height:30px!important;width:auto;direction:ltr}
+  .nav-links{display:flex;align-items:center;gap:26px;font-weight:600;font-size:15px;color:var(--body)}
+  .nav-links a:hover{color:var(--brand)}
+  .lang{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font:600 14px Inter,Tajawal,sans-serif;color:var(--ink);cursor:pointer}
+  .lang:hover{border-color:var(--brand);color:var(--brand)}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:84px 0 70px}
+  .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(10px);z-index:-1}
+  .hero::before{width:620px;height:620px;top:-260px;inset-inline-end:-160px;background:radial-gradient(closest-side,rgba(22,128,247,.16),rgba(22,128,247,0))}
+  .hero::after{width:520px;height:520px;bottom:-280px;inset-inline-start:-140px;background:radial-gradient(closest-side,rgba(15,159,122,.13),rgba(15,159,122,0))}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);color:#1D4ED8;font-weight:700;font-size:14px;border-radius:999px;padding:6px 14px;font-family:Inter,Tajawal,sans-serif;letter-spacing:.3px}
+  .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block}
+  h1{font-size:clamp(34px,6vw,60px);line-height:1.18;font-weight:900;margin:20px 0 18px;letter-spacing:-.5px}
+  html[lang=en] h1{font-weight:700;letter-spacing:-1.5px}
+  h1 em{font-style:normal;color:var(--brand)}
+  .lead{font-size:clamp(17px,2.2vw,20px);color:var(--body);max-width:640px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;border-radius:14px;padding:13px 22px;transition:transform .15s ease, box-shadow .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 24px rgba(22,128,247,.25)}
+  .btn-ghost{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+  .arrow{display:inline-block} [dir=rtl] .arrow{transform:scaleX(-1)}
+
+  section{padding:70px 0}
+  .sec-head{max-width:640px;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;line-height:1.25}
+  html[lang=en] .sec-head h2{font-weight:700;letter-spacing:-.6px}
+  .sec-head p{color:var(--body);margin-top:10px;font-size:17px}
+
+  /* products */
+  .product{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+  .p-top{display:flex;align-items:center;gap:14px}
+  .p-top img{width:58px;height:58px!important;border-radius:16px;box-shadow:0 8px 18px rgba(22,128,247,.25)}
+  .p-name{font:700 26px Inter,sans-serif;letter-spacing:-.6px;direction:ltr}
+  .p-name b{color:var(--brand);font-weight:700}
+  .badge{display:inline-block;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;margin-top:2px}
+  .badge.live{background:var(--mint);color:var(--teal)}
+  .badge.soon{background:#FEF5E7;color:var(--amber)}
+  .p-desc{color:var(--body);margin:18px 0 18px;font-size:17px}
+  .feats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-bottom:26px}
+  .feats li{display:flex;gap:9px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:500}
+  .feats li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:6px;background:var(--brand-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231680F7' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+  .shot{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px rgba(15,23,42,.12);background:var(--soft)}
+  .platforms{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:13.5px;color:var(--muted);font-weight:600}
+  .platforms span{background:var(--soft);border-radius:999px;padding:4px 11px}
+
+  .soon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+  .soon-card{background:var(--surface);border:1px dashed #CBD5E1;border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start}
+  .soon-ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center}
+  .soon-card h3{font-size:18px;font-weight:800}
+  .soon-card p{color:var(--body);font-size:15px;margin-top:4px}
+
+  /* values */
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .val{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .val .ic{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .val h3{font-size:18px;font-weight:800;margin-bottom:6px}
+  .val p{color:var(--body);font-size:15px}
+
+  /* contact */
+  .contact{background:linear-gradient(135deg,#EAF3FF 0%,#EEF8F4 100%);border:1px solid #DCE8F7;border-radius:28px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .contact h2{font-size:clamp(24px,3.2vw,32px);font-weight:900}
+  html[lang=en] .contact h2{font-weight:700}
+  .contact p{color:var(--body);margin-top:6px}
+
+  footer{padding:34px 0 40px;color:var(--muted);font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+  .foot img{height:22px!important;width:auto}
+  .foot nav{display:flex;gap:18px;flex-wrap:wrap}
+  .foot a:hover{color:var(--brand)}
+
+
+  /* analytics */
+  .viz-root{--surface-1:#FFFFFF;--text-primary:#0F172A;--text-secondary:#475569;--text-muted:#64748B;--grid:#EEF2F7;--axis:#CBD5E1;
+    --s-income:#2a78d6;--s-expense:#eb6834;--s-saving:#1baf7a}
+  .viz-card{background:var(--surface-1);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow)}
+  .seg{display:inline-flex;background:var(--soft);border-radius:14px;padding:4px;gap:4px;flex-wrap:wrap}
+  .seg button{border:0;background:transparent;font:700 14.5px Tajawal,Inter,sans-serif;color:var(--body);padding:8px 14px;border-radius:10px;cursor:pointer}
+  .seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(15,23,42,.10)}
+  .seg button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 8px}
+  .kpi{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+  .kpi .k{font-size:13.5px;color:var(--text-secondary);font-weight:700;display:flex;align-items:center;gap:8px}
+  .kpi .k i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .kpi .k i.line{height:3px;border-radius:2px;width:14px}
+  .kpi .v{font:700 24px Inter,sans-serif;letter-spacing:-.5px;color:var(--text-primary);margin-top:4px;direction:ltr;text-align:start}
+  html[dir=rtl] .kpi .v{text-align:right}
+  .kpi .v small{font-size:13px;color:var(--text-muted);font-weight:600;margin-inline-start:4px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--text-secondary);font-weight:600;margin:14px 0 4px}
+  .legend span{display:inline-flex;align-items:center;gap:8px}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .legend i.line{height:3px;width:18px;border-radius:2px}
+  .chart-wrap{position:relative}
+  #chart{width:100%;height:auto;display:block;overflow:visible;direction:ltr}
+  #chart text{font:500 12px Inter,Tajawal,sans-serif;fill:var(--text-muted)}
+  #chart .hit{fill:transparent;cursor:pointer}
+  #chart .hit:focus{outline:none}
+  #chart .grp.on rect.bar{filter:brightness(1.08)}
+  #chart .hl{fill:#F1F5F9;opacity:0}
+  #chart .grp.on .hl{opacity:1}
+  .tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 24px rgba(15,23,42,.12);padding:10px 12px;font-size:13px;min-width:170px;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s;z-index:5}
+  .tip.on{opacity:1;transform:none}
+  .tip .t{font-weight:800;color:var(--text-primary);margin-bottom:6px}
+  .tip .r{display:flex;align-items:center;gap:8px;justify-content:space-between;margin-top:3px;color:var(--text-secondary)}
+  .tip .r b{font:700 13.5px Inter,sans-serif;color:var(--text-primary);direction:ltr}
+  .tip .r i{width:12px;height:3px;border-radius:2px;display:inline-block}
+  .note{font-size:13px;color:var(--text-muted);margin-top:10px}
+  details.tbl{margin-top:12px}
+  details.tbl summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--brand)}
+  details.tbl table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+  details.tbl th,details.tbl td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:start}
+  details.tbl td.n{font-family:Inter,sans-serif;direction:ltr;text-align:end}
+  .an-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:18px}
+  .an{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .an h3{font-size:16px;font-weight:800}
+  .an p{font-size:14px;color:var(--body);margin-top:4px}
+
+  /* markets */
+  .mk{display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:center}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14.5px}
+  .chip i{width:9px;height:9px;border-radius:50%}
+  @media (max-width:880px){.kpis{grid-template-columns:1fr 1fr}.an-grid{grid-template-columns:1fr}.mk{grid-template-columns:1fr}}
+  @media (max-width:560px){.viz-card{padding:18px}.kpi .v{font-size:20px}.seg button{padding:7px 10px;font-size:13.5px}}
+  @media (max-width:880px){
+    .product{grid-template-columns:1fr;padding:24px}
+    .values{grid-template-columns:1fr 1fr}
+    .nav-links a{display:none}
+  }
+  @media (max-width:560px){
+    .hero{padding:56px 0 40px}
+    section{padding:48px 0}
+    .feats,.soon-grid,.values{grid-template-columns:1fr}
+    .contact{padding:28px}
+    .logo{height:26px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" aria-label="DGOTIX"><img class="logo" src="logo.svg" alt="DGOTIX"></a>
+    <div class="nav-links">
+      <a href="#products"><span data-ar>المنتجات</span><span data-en>Products</span></a>
+      <a href="#analytics"><span data-ar>التحليلات</span><span data-en>Analytics</span></a>
+      <a href="#markets"><span data-ar>الأسواق</span><span data-en>Markets</span></a>
+      <a href="#why"><span data-ar>لماذا DGOTIX</span><span data-en>Why DGOTIX</span></a>
+      <a href="#contact"><span data-ar>تواصل معنا</span><span data-en>Contact</span></a>
+      <button class="lang" id="lang" type="button" aria-label="Switch language">English</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><i></i>Digital Productivity Solutions</span>
+      <h1>
+        <span data-ar>أدوات رقمية بسيطة<br>تنظّم <em>مالك ووقتك</em></span>
+        <span data-en>Simple digital tools<br>for your <em>money and time</em></span>
+      </h1>
+      <p class="lead">
+        <span data-ar>في DGOTIX نصمّم تطبيقات عربية وعالمية، واضحة وآمنة، تعمل على الجوال والكمبيوتر، لتنجز أكثر بجهد أقل.</span>
+        <span data-en>At DGOTIX we design clear, secure apps in Arabic and English that work on your phone and your computer — so you get more done with less effort.</span>
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://smartbudget.dgotix.com/">
+          <span data-ar>جرّب سمارت بدجت</span><span data-en>Try SmartBudget</span>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#products"><span data-ar>تعرّف على منتجاتنا</span><span data-en>Explore our products</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section id="products">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span data-ar>منتجاتنا</span><span data-en>Our products</span></h2>
+        <p><span data-ar>نبدأ بالمال، لأن تنظيمه أول خطوة نحو راحة البال.</span><span data-en>We start with money — because getting it in order is the first step to peace of mind.</span></p>
+      </div>
+
+      <article class="product">
+        <div>
+          <div class="p-top">
+            <img src="smartbudget-icon.png" alt="">
+            <div>
+              <div class="p-name">Smart<b>Budget</b></div>
+              <span class="badge live"><span data-ar>متاح الآن على الويب</span><span data-en>Live on the web</span></span>
+            </div>
+          </div>
+          <p class="p-desc">
+            <span data-ar>تطبيق الميزانية الذكي: دخلك ومصاريفك وصافي شهرك في لوحة واحدة، بكل العملات العربية والعالمية.</span>
+            <span data-en>The smart budget planner: your income, spending and monthly net in one dashboard — in every Arab and world currency.</span>
+          </p>
+          <ul class="feats">
+            <li><span data-ar>محافظ متعددة العملات ومحوّل فوري</span><span data-en>Multi-currency wallets &amp; converter</span></li>
+            <li><span data-ar>ماسح الفواتير الذكي</span><span data-en>Smart receipt scanner</span></li>
+            <li><span data-ar>إدخال سريع بكلمة: «قهوة 18»</span><span data-en>Quick entry in plain words</span></li>
+            <li><span data-ar>الصحة المالية ونصائح واضحة</span><span data-en>Financial health score</span></li>
+            <li><span data-ar>حاسبة الزكاة وميزانيات رمضان والأعياد</span><span data-en>Zakat calculator, Ramadan &amp; Eid budgets</span></li>
+            <li><span data-ar>مستشار مالي بالذكاء الاصطناعي</span><span data-en>AI money advisor</span></li>
+            <li><span data-ar>تقارير PDF احترافية</span><span data-en>Professional PDF reports</span></li>
+            <li><span data-ar>عربي وإنجليزي، داكن وفاتح</span><span data-en>Arabic &amp; English, dark &amp; light</span></li>
+          </ul>
+          <div class="cta" style="margin-top:0">
+            <a class="btn btn-primary" href="https://smartbudget.dgotix.com/">
+              <span data-ar>افتح سمارت بدجت</span><span data-en>Open SmartBudget</span>
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div class="platforms">
+            <span><span data-ar>الويب · متاح</span><span data-en>Web · available</span></span>
+            <span><span data-ar>Google Play · قريباً</span><span data-en>Google Play · coming soon</span></span>
+            <span><span data-ar>App Store · قريباً</span><span data-en>App Store · coming soon</span></span>
+          </div>
+        </div>
+        <div class="shot"><img src="smartbudget-dashboard.jpg" alt="SmartBudget dashboard" loading="lazy" width="1400" height="875"></div>
+      </article>
+
+      <div class="soon-grid">
+        <div class="soon-card">
+          <div class="soon-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1680F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+          <div>
+            <span class="badge soon"><span data-ar>قريباً</span><span data-en>Coming soon</span></span>
+            <h3><span data-ar>منتجات جديدة في الطريق</span><span data-en>More products on the way</span></h3>
+            <p><span data-ar>نعمل على أدوات إنتاجية جديدة بنفس البساطة والعناية.</span><span data-en>New productivity tools, built with the same simplicity and care.</span></p>
+          </div>
+        </div>
+        <div class="soon-card">
+          <div class="soon-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F9F7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg></div>
+          <div>
+            <h3><span data-ar>لديك فكرة أو احتياج؟</span><span data-en>Have an idea or a need?</span></h3>
+            <p><span data-ar>أخبرنا ما الذي يضيّع وقتك، فقد يكون منتجنا القادم.</span><span data-en>Tell us what wastes your time — it might become our next product.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Analytics -->
+  <section id="analytics" style="padding-top:20px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span data-ar>تحليلات تفهم مالك</span><span data-en>Analytics that make sense of your money</span></h2>
+        <p><span data-ar>قارن دخلك ومصاريفك، واعرف كم ادّخرت فعلاً: شهرياً، ربع سنوي، نصف سنوي وسنوياً — كما في لوحة التقارير داخل سمارت بدجت.</span><span data-en>Compare income and spending and see what you really saved — monthly, quarterly, half-yearly and yearly, just like the reports inside SmartBudget.</span></p>
+      </div>
+      <div class="viz-card viz-root">
+        <div class="seg" role="group" aria-label="Period" id="seg">
+          <button type="button" data-p="m" aria-pressed="true"><span data-ar>شهري</span><span data-en>Monthly</span></button>
+          <button type="button" data-p="q" aria-pressed="false"><span data-ar>ربع سنوي</span><span data-en>Quarterly</span></button>
+          <button type="button" data-p="h" aria-pressed="false"><span data-ar>نصف سنوي</span><span data-en>Half-yearly</span></button>
+          <button type="button" data-p="y" aria-pressed="false"><span data-ar>سنوي</span><span data-en>Yearly</span></button>
+        </div>
+        <p class="note" id="kcap" style="margin:18px 0 0;font-weight:700;color:var(--text-secondary)"></p>
+        <div class="kpis" style="margin-top:8px">
+          <div class="kpi"><div class="k"><i style="background:var(--s-income)"></i><span data-ar>الدخل</span><span data-en>Income</span></div><div class="v" id="kI"></div></div>
+          <div class="kpi"><div class="k"><i style="background:var(--s-expense)"></i><span data-ar>المصاريف</span><span data-en>Expenses</span></div><div class="v" id="kE"></div></div>
+          <div class="kpi"><div class="k"><i class="line" style="background:var(--s-saving)"></i><span data-ar>المدّخرات (الفرق)</span><span data-en>Savings (the gap)</span></div><div class="v" id="kS"></div></div>
+          <div class="kpi"><div class="k"><span data-ar>معدّل الادخار</span><span data-en>Savings rate</span></div><div class="v" id="kR"></div></div>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--s-income)"></i><span data-ar>الدخل</span><span data-en>Income</span></span>
+          <span><i style="background:var(--s-expense)"></i><span data-ar>المصاريف</span><span data-en>Expenses</span></span>
+          <span><i class="line" style="background:var(--s-saving)"></i><span data-ar>المدّخرات = الدخل − المصاريف</span><span data-en>Savings = income − expenses</span></span>
+        </div>
+        <div class="chart-wrap">
+          <svg id="chart" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Income, expenses and savings"></svg>
+          <div class="tip" id="tip" role="status" aria-live="polite"></div>
+        </div>
+        <details class="tbl">
+          <summary><span data-ar>عرض الأرقام كجدول</span><span data-en>Show the numbers as a table</span></summary>
+          <table id="tbl"></table>
+        </details>
+        <p class="note"><span data-ar>* أرقام توضيحية من حساب تجريبي بالريال القطري. داخل التطبيق تُحسب من معاملاتك أنت وبعملتك.</span><span data-en>* Illustrative figures from a demo account in Qatari riyals. In the app they come from your own transactions, in your currency.</span></p>
+        <div class="an-grid">
+          <div class="an"><h3><span data-ar>مقارنة كل فترة بالتي قبلها</span><span data-en>Every period vs the last</span></h3><p><span data-ar>نسبة التغيّر في الدخل والمصاريف ومعدّل الادخار.</span><span data-en>Change in income, spending and savings rate.</span></p></div>
+          <div class="an"><h3><span data-ar>أين يذهب مالك</span><span data-en>Where your money goes</span></h3><p><span data-ar>توزيع المصاريف حسب الفئة، والدخل حسب المصدر.</span><span data-en>Spending by category and income by source.</span></p></div>
+          <div class="an"><h3><span data-ar>تقرير PDF لأي فترة</span><span data-en>A PDF report for any period</span></h3><p><span data-ar>شهر، ربع، نصف سنة أو سنة كاملة — بضغطة.</span><span data-en>Month, quarter, half-year or full year — in one tap.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Markets -->
+  <section id="markets" style="padding-top:20px">
+    <div class="wrap mk">
+      <div>
+        <div class="sec-head" style="margin-bottom:6px">
+          <h2><span data-ar>الأسواق العالمية في جيبك</span><span data-en>World markets in your pocket</span></h2>
+          <p><span data-ar>تابع أسعار العملات والذهب والفضة والعملات الرقمية، وقارن السعر الرسمي بالموازي حيث يتوفر — قبل أن تحوّل أو تشتري.</span><span data-en>Follow currencies, gold, silver and crypto, and compare official and parallel rates where available — before you convert or buy.</span></p>
+        </div>
+        <div class="chips">
+          <span class="chip"><i style="background:#2a78d6"></i><span data-ar>أكثر من 30 عملة</span><span data-en>30+ currencies</span></span>
+          <span class="chip"><i style="background:#6250d6"></i><span data-ar>الرسمي والموازي</span><span data-en>Official &amp; parallel rates</span></span>
+          <span class="chip"><i style="background:#eda100"></i><span data-ar>الذهب والفضة والبلاتين</span><span data-en>Gold, silver &amp; platinum</span></span>
+          <span class="chip"><i style="background:#1baf7a"></i><span data-ar>العملات الرقمية</span><span data-en>Crypto</span></span>
+          <span class="chip"><i style="background:#eb6834"></i><span data-ar>محوّل فوري</span><span data-en>Instant converter</span></span>
+        </div>
+        <p class="note"><span data-ar>* الصورة توضيحية بأسعار تجريبية. داخل التطبيق تُحدَّث الأسعار من مصادرها، والسعر الموازي متاح لبعض الدول فقط.</span><span data-en>* Illustrative screenshot with sample prices. In the app, prices update from their sources; parallel rates are available for some countries only.</span></p>
+      </div>
+      <div class="shot"><img src="smartbudget-markets.jpg" alt="SmartBudget markets" loading="lazy" width="1400" height="875"></div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span data-ar>لماذا DGOTIX؟</span><span data-en>Why DGOTIX?</span></h2>
+        <p><span data-ar>مبادئ نلتزم بها في كل منتج.</span><span data-en>The principles behind everything we build.</span></p>
+      </div>
+      <div class="values">
+        <div class="val">
+          <div class="ic" style="background:var(--brand-soft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1680F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg></div>
+          <h3><span data-ar>عربي أولاً، عالمي دائماً</span><span data-en>Arabic first, global always</span></h3>
+          <p><span data-ar>واجهات عربية متقنة، وإنجليزية بنفس الجودة.</span><span data-en>Carefully crafted Arabic, with English of the same quality.</span></p>
+        </div>
+        <div class="val">
+          <div class="ic" style="background:var(--mint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F9F7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <h3><span data-ar>خصوصيتك محترمة</span><span data-en>Your privacy, respected</span></h3>
+          <p><span data-ar>بياناتك لك، مع قفل التطبيق والنسخ الاحتياطي.</span><span data-en>Your data is yours — with app lock and backups.</span></p>
+        </div>
+        <div class="val">
+          <div class="ic" style="background:#FEF5E7"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B7791F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+          <h3><span data-ar>بساطة بلا تعقيد</span><span data-en>Simple, never complicated</span></h3>
+          <p><span data-ar>كل ميزة تُختبر بسؤال واحد: هل توفّر وقتك؟</span><span data-en>Every feature passes one test: does it save you time?</span></p>
+        </div>
+        <div class="val">
+          <div class="ic" style="background:#F1EEFD"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="12" rx="1.5"/><path d="M6 18h6"/></svg></div>
+          <h3><span data-ar>في كل مكان</span><span data-en>Everywhere you are</span></h3>
+          <p><span data-ar>على الويب والجوال، متزامن ويعمل حتى بدون إنترنت.</span><span data-en>Web and mobile, in sync — and it works offline too.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2><span data-ar>نسعد بتواصلك</span><span data-en>We'd love to hear from you</span></h2>
+          <p><span data-ar>للدعم، أو الشراكات، أو اقتراح ميزة جديدة.</span><span data-en>For support, partnerships or a feature idea.</span></p>
+        </div>
+        <a class="btn btn-primary" href="mailto:support@dgotix.com" dir="ltr">support@dgotix.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="logo.svg" alt="DGOTIX">
+    <nav>
+      <a href="https://smartbudget.dgotix.com/">SmartBudget</a>
+      <a href="https://smartbudget.dgotix.com/#/privacy"><span data-ar>سياسة الخصوصية</span><span data-en>Privacy</span></a>
+      <a href="https://smartbudget.dgotix.com/#/terms"><span data-ar>شروط الاستخدام</span><span data-en>Terms</span></a>
+    </nav>
+    <span dir="ltr">© <span id="yr">2026</span> DGOTIX</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('lang');
+    function set(l) {
+      root.lang = l; root.dir = l === 'ar' ? 'rtl' : 'ltr';
+      btn.textContent = l === 'ar' ? 'English' : 'العربية';
+      document.title = l === 'ar' ? 'DGOTIX — حلول إنتاجية رقمية | Digital Productivity Solutions' : 'DGOTIX — Digital Productivity Solutions';
+      try { localStorage.setItem('dgotix-lang', l); } catch (e) {}
+    }
+    var saved = null; try { saved = localStorage.getItem('dgotix-lang'); } catch (e) {}
+    var q = new URLSearchParams(location.search).get('lang');
+    set(q === 'en' || q === 'ar' ? q : saved || ((navigator.language || 'ar').slice(0, 2) === 'ar' ? 'ar' : 'en'));
+    btn.addEventListener('click', function () { set(root.lang === 'ar' ? 'en' : 'ar'); });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+
+<script>
+(function () {
+  // Illustrative demo account (QAR), Oct 2025 - Sep 2026: [income, expenses].
+  var M = [[37500,28395],[37500,30757],[45500,28957],[37500,41661],[37500,31056],[37500,39749],[37500,23668],[37500,24258],[43500,24500],[37500,33688],[37500,24935],[37500,26051]];
+  var MON = {ar:['أكتوبر','نوفمبر','ديسمبر','يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر'], en:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep']};
+  var T = {ar:{inc:'الدخل',exp:'المصاريف',sav:'المدّخرات',period:'الفترة',cur:'ر.ق',q:['الربع 4 · 2025','الربع 1 · 2026','الربع 2 · 2026','الربع 3 · 2026'],h:['أكتوبر – مارس','أبريل – سبتمبر'],y:['أكتوبر 2025 – سبتمبر 2026']},
+           en:{inc:'Income',exp:'Expenses',sav:'Savings',period:'Period',cur:'QAR',q:['Q4 2025','Q1 2026','Q2 2026','Q3 2026'],h:['Oct – Mar','Apr – Sep'],y:['Oct 2025 – Sep 2026']}};
+  var per = 'm', NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('chart'), tip = document.getElementById('tip');
+  function lang() { return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
+  function groups() {
+    var L = lang(), out = [], k = per === 'm' ? 1 : per === 'q' ? 3 : per === 'h' ? 6 : 12;
+    for (var i = 0; i < 12; i += k) {
+      var a = 0, b = 0; for (var j = i; j < i + k; j++) { a += M[j][0]; b += M[j][1]; }
+      out.push({ label: per === 'm' ? MON[L][i] : T[L][per][i / k], inc: a, exp: b, sav: a - b });
+    }
+    return out;
+  }
+  function fmt(n) { return Math.round(n).toLocaleString('en-US'); }
+  function short(n) { var a = Math.abs(n); return (n < 0 ? '\u200E−' : '') + (a >= 1000 ? (a / 1000).toFixed(a >= 100000 ? 0 : 1).replace(/\.0$/, '') + 'K' : String(a)); }
+  function el(n, at) { var e = document.createElementNS(NS, n); for (var k in at) e.setAttribute(k, at[k]); return e; }
+  function niceMax(v) { var p = Math.pow(10, Math.floor(Math.log10(v))), m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; }
+
+  function render() {
+    var L = lang(), G = groups(), rtl = L === 'ar';
+    var W = Math.max(300, Math.round(svg.parentNode.clientWidth || 1000)), narrow = W < 600, H = narrow ? 300 : 380, padT = 14, padB = 40, padS = narrow ? 44 : 56, padE = 6;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var lo = Math.min(0, Math.min.apply(null, G.map(function (g) { return g.sav; })));
+    var hi = niceMax(Math.max.apply(null, G.map(function (g) { return g.inc; })) * 1.05);
+    var step = hi / 4, loN = lo < 0 ? -Math.ceil(-lo / step) * step : 0;
+    var y = function (v) { return padT + (hi - v) / (hi - loN) * (H - padT - padB); };
+    var x0 = rtl ? padE : padS, x1 = rtl ? W - padS : W - padE, cw = (x1 - x0) / G.length;
+    var cx = function (i) { var k = rtl ? G.length - 1 - i : i; return x0 + cw * (k + .5); };
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    for (var v = loN; v <= hi + 1; v += step) {
+      svg.appendChild(el('line', { x1: x0, x2: x1, y1: y(v), y2: y(v), stroke: v === 0 ? '#CBD5E1' : '#EEF2F7', 'stroke-width': v === 0 ? 1.5 : 1 }));
+      var t = el('text', { x: rtl ? W - padS + 10 : padS - 10, y: y(v) + 4, 'text-anchor': rtl ? 'start' : 'end' }); t.textContent = short(v); svg.appendChild(t);
+    }
+    var bw = Math.min(26, cw * (narrow ? .34 : .28)), gap = 2;
+    G.forEach(function (g, i) {
+      var c = cx(i), grp = el('g', { class: 'grp', tabindex: 0 });
+      grp.appendChild(el('rect', { class: 'hl', x: c - cw / 2 + 2, y: padT, width: cw - 4, height: H - padT - padB, rx: 8 }));
+      [[g.inc, '#2a78d6', rtl ? 1 : -1], [g.exp, '#eb6834', rtl ? -1 : 1]].forEach(function (b) {
+        var bx = b[2] < 0 ? c - gap / 2 - bw : c + gap / 2, top = y(b[0]), h = y(0) - top, r = Math.min(4, bw / 2);
+        grp.appendChild(el('path', { class: 'bar', fill: b[1], d: 'M' + bx + ',' + y(0) + 'V' + (top + r) + 'Q' + bx + ',' + top + ' ' + (bx + r) + ',' + top + 'H' + (bx + bw - r) + 'Q' + (bx + bw) + ',' + top + ' ' + (bx + bw) + ',' + (top + r) + 'V' + y(0) + 'Z' }));
+      });
+      if (!(narrow && per === 'm' && i % 2)) { var lt = el('text', { x: c, y: H - 14, 'text-anchor': 'middle' }); lt.textContent = narrow && per === 'q' ? (rtl ? ['الربع 4', 'الربع 1', 'الربع 2', 'الربع 3'] : ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26'])[i] : g.label; grp.appendChild(lt); }
+      var hit = el('rect', { class: 'hit', x: c - cw / 2, y: 0, width: cw, height: H });
+      grp.appendChild(hit);
+      function show() {
+        svg.querySelectorAll('.grp.on').forEach(function (n) { n.classList.remove('on'); }); grp.classList.add('on');
+        while (tip.firstChild) tip.removeChild(tip.firstChild);
+        var tt = document.createElement('div'); tt.className = 't'; tt.textContent = g.label; tip.appendChild(tt);
+        [[g.inc, T[L].inc, '#2a78d6'], [g.exp, T[L].exp, '#eb6834'], [g.sav, T[L].sav, '#1baf7a']].forEach(function (r) {
+          var row = document.createElement('div'); row.className = 'r';
+          var nm = document.createElement('span'); var key = document.createElement('i'); key.style.background = r[2];
+          nm.appendChild(key); nm.appendChild(document.createTextNode(' ' + r[1]));
+          var val = document.createElement('b'); val.textContent = (r[0] < 0 ? '−' : '') + fmt(Math.abs(r[0])) + ' ' + T[L].cur;
+          row.appendChild(nm); row.appendChild(val); tip.appendChild(row);
+        });
+        var box = svg.getBoundingClientRect(), sc = box.width / W, px = c * sc, tw = tip.offsetWidth || 180;
+        tip.style.left = Math.max(0, Math.min(box.width - tw, px - tw / 2)) + 'px'; tip.style.top = (y(Math.max(g.inc, g.exp)) * sc - 10 - (tip.offsetHeight || 90)) + 'px';
+        if (parseFloat(tip.style.top) < 0) tip.style.top = '0px';
+        tip.classList.add('on');
+      }
+      function hide() { grp.classList.remove('on'); tip.classList.remove('on'); }
+      grp.addEventListener('pointerenter', show); grp.addEventListener('pointerleave', hide);
+      grp.addEventListener('focus', show); grp.addEventListener('blur', hide);
+      svg.appendChild(grp);
+    });
+    // savings line on the same axis (same unit), drawn above the bars
+    var pts = G.map(function (g, i) { return [cx(i), y(g.sav)]; });
+    if (pts.length > 1) svg.appendChild(el('polyline', { points: pts.map(function (p) { return p.join(','); }).join(' '), fill: 'none', stroke: '#1baf7a', 'stroke-width': 2.5, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', 'pointer-events': 'none' }));
+    pts.forEach(function (p, i) {
+      svg.appendChild(el('circle', { cx: p[0], cy: p[1], r: 5.5, fill: '#1baf7a', stroke: '#fff', 'stroke-width': 2, 'pointer-events': 'none' }));
+    });
+    // selective direct label: the latest period's savings
+    var last = pts.length - 1, lb = el('text', { x: pts[last][0], y: pts[last][1] - 12, 'text-anchor': 'middle', style: 'font-weight:700;fill:#0F172A' });
+    lb.textContent = short(G[last].sav); svg.appendChild(lb);
+    // KPIs + table
+    var LG = G[G.length - 1], tI = LG.inc, tE = LG.exp;
+    document.getElementById('kcap').textContent = (L === 'ar' ? (per === 'y' ? 'آخر 12 شهراً: ' : 'آخر فترة: ') : (per === 'y' ? 'Last 12 months: ' : 'Latest period: ')) + LG.label;
+    document.getElementById('kI').textContent = fmt(tI); document.getElementById('kE').textContent = fmt(tE);
+    document.getElementById('kS').textContent = (tI - tE < 0 ? '−' : '') + fmt(Math.abs(tI - tE));
+    ['kI', 'kE', 'kS'].forEach(function (id) { var s = document.createElement('small'); s.textContent = T[L].cur; document.getElementById(id).appendChild(s); });
+    document.getElementById('kR').textContent = (Math.round((tI - tE) / tI * 1000) / 10) + '%';
+    var tb = document.getElementById('tbl'); while (tb.firstChild) tb.removeChild(tb.firstChild);
+    var hr = tb.insertRow(); [T[L].period, T[L].inc, T[L].exp, T[L].sav].forEach(function (h) { var th = document.createElement('th'); th.textContent = h; hr.appendChild(th); });
+    G.forEach(function (g) { var r = tb.insertRow(); var c0 = r.insertCell(); c0.textContent = g.label;
+      [g.inc, g.exp, g.sav].forEach(function (v) { var c = r.insertCell(); c.className = 'n'; c.textContent = (v < 0 ? '−' : '') + fmt(Math.abs(v)); }); });
+  }
+  document.getElementById('seg').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; per = b.getAttribute('data-p');
+    this.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); render();
+  });
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  var rz; window.addEventListener('resize', function () { tip.classList.remove('on'); clearTimeout(rz); rz = setTimeout(render, 120); });
+  render();
+})();
+</script>
+</body>
+</html>
