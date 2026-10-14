@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>سياسة الخصوصية · Privacy Policy — SmartBudget</title>
+<title>سياسة الخصوصية · Privacy Policy · Politique de confidentialité — SmartBudget</title>
 <link rel="canonical" href="https://dgotix.com/privacy.html">
 <link rel="icon" type="image/png" href="smartbudget-icon.png">
 <link rel="stylesheet" href="legal.css">
@@ -16,7 +16,7 @@
 <div class="wrap">
   <header>
     <a href="/"><img src="logo.svg" alt="DGOTIX"></a>
-    <a href="#en">English</a>
+    <nav><a href="#en">English</a> · <a href="#fr">Français</a></nav>
   </header>
 
   <article>
@@ -89,6 +89,42 @@
     <h2>Changes and contact</h2>
     <p>We may update this policy; the date shown above reflects the latest version. For privacy questions, contact us at <a href="mailto:support@dgotix.com">support@dgotix.com</a>.</p>
     <p class="meta" style="margin-top:20px"><a href="terms.html#en">Terms of use</a> · <a href="privacy.html#en">Privacy policy</a> · <a href="refund.html#en">Refund policy</a></p>
+  </article>
+
+  <article id="fr" lang="fr" dir="ltr">
+    <h1>Politique de confidentialité — SmartBudget</h1>
+    <p class="meta">Dernière mise à jour : 2026-10-12</p>
+    <h2>Vue d'ensemble</h2>
+    <p>Cette politique explique ce que SmartBudget stocke, où ces données sont stockées et les choix dont vous disposez. En bref : vos données financières vous appartiennent, elles sont d'abord enregistrées sur votre appareil, et nous ne les vendons jamais, ne vous montrons aucune publicité et ne vous pistons pas. Quelques fonctionnalités facultatives (connexion et synchronisation, DGOTIX AI, scan des tickets dans le cloud et formules payantes) envoient des données précises à un service uniquement lorsque vous les utilisez, comme décrit ci-dessous.</p>
+    <h2>Ce que nous stockons</h2>
+    <p>Les informations que vous saisissez vous-même : revenus, dépenses, budgets, objectifs, dettes, portefeuilles, catégories personnalisées et vos préférences d'affichage (thème, langue, devise de base). Si vous créez un compte, nous conservons aussi votre adresse e-mail, votre formule et l'état de votre abonnement, ainsi que des compteurs d'utilisation par période pour DGOTIX AI et le scan des tickets dans le cloud, utilisés uniquement pour appliquer les limites de votre formule. Nous ne stockons ni vos questions à DGOTIX AI ni les images de vos tickets ; si vous signalez une réponse de l'IA, nous conservons cette réponse et votre note facultative afin de l'examiner.</p>
+    <h2>Où se trouvent vos données</h2>
+    <p>Tout est d'abord enregistré sur votre appareil (dans l'application, ou dans votre navigateur pour la version web), de sorte que l'application fonctionne même sans compte ni connexion. Si vous vous connectez, vos données se synchronisent aussi automatiquement entre vos appareils : une copie est stockée dans notre base de données (hébergée par Supabase), liée à votre compte et isolée afin que vous seul puissiez la lire. Vous pouvez désactiver la synchronisation dans Paramètres ; vos données restent alors uniquement sur cet appareil.</p>
+    <h2>Votre compte et les e-mails</h2>
+    <p>Votre adresse e-mail sert à vous connecter et à vous envoyer les e-mails liés au compte, comme la confirmation de l'adresse et la réinitialisation du mot de passe (envoyés via Brevo). Elle n'est jamais utilisée à des fins publicitaires ni partagée à des fins marketing. Lors de l'inscription ou de la connexion, une vérification humaine rapide (Cloudflare Turnstile) écarte les abus automatisés.</p>
+    <h2>DGOTIX AI</h2>
+    <p>DGOTIX AI est facultatif. Lorsque vous posez une question, le texte de cette question et un résumé de vos chiffres (totaux par mois et par catégorie sur 12 mois au plus, budgets, soldes des portefeuilles, objectifs, transactions récurrentes, budgets saisonniers et tontines : uniquement des montants et des dates, jamais les descriptions, les notes ni les noms que vous donnez) sont envoyés via notre serveur sécurisé à un fournisseur d'IA (Google Gemini, OpenAI ou Anthropic) pour générer la réponse. Notre serveur utilise nos propres clés de fournisseur et n'enregistre que des métadonnées d'utilisation, jamais votre question ni vos chiffres. Nous n'utilisons pas vos données pour entraîner un modèle. Les réponses sont générées automatiquement : vérifiez les chiffres importants avant d'agir.</p>
+    <h2>Scan des tickets</h2>
+    <p>Sur Android, les tickets peuvent être lus entièrement sur votre appareil. Le scan dans le cloud envoie l'image du ticket via notre serveur sécurisé à un fournisseur d'IA uniquement pour lire le commerçant, la date, le montant, les articles et la catégorie ; l'image n'est pas conservée.</p>
+    <h2>Paiements et abonnements</h2>
+    <p>Les formules payantes sont facultatives. Les commandes sont traitées par Paddle.com, notre revendeur en ligne et marchand officiel (Merchant of Record), qui vous permet de payer par carte, PayPal, Apple Pay ou Google Pay. Paddle collecte les informations de facturation dont il a besoin (comme votre nom, votre e-mail, votre pays et votre moyen de paiement) selon sa propre politique de confidentialité ; nous ne voyons ni ne conservons jamais les détails complets de votre carte. Nous conservons votre formule, l'état de votre abonnement, sa date de renouvellement et les identifiants d'abonnement de Paddle pour vous donner le bon accès, ainsi qu'une trace des codes promo que vous utilisez.</p>
+    <h2>Prestataires de services</h2>
+    <p>Selon les fonctionnalités que vous utilisez : Supabase (comptes, synchronisation et fonctions de notre serveur) ; Paddle (paiements) ; Brevo (e-mails liés au compte) ; Cloudflare Turnstile (la vérification humaine à la connexion) ; GitHub Pages (hébergement de notre site et de l'application web) ; Google, OpenAI et Anthropic (DGOTIX AI et scan des tickets dans le cloud) ; et des sources publiques de données de marché pour les chiffres en direct : taux de change (open.er-api.com) et cours des cryptomonnaies (CoinGecko), dont les requêtes ne contiennent que des symboles de devises ou d'actifs, jamais vos données personnelles ou financières. Chaque prestataire ne traite les données que pour fournir sa part du service.</p>
+    <h2>Sécurité</h2>
+    <p>Les connexions à nos services sont chiffrées (HTTPS). Dans notre base de données, les enregistrements de chaque utilisateur sont isolés afin qu'un compte ne puisse jamais lire ceux d'un autre. Les clés du serveur n'atteignent jamais l'application, les notifications de paiement sont vérifiées avant de modifier quoi que ce soit, et vous pouvez ajouter un verrouillage de l'application (code PIN ou empreinte) sur votre appareil.</p>
+    <h2>Ce que nous ne faisons pas</h2>
+    <p>Nous ne vendons ni ne louons vos données, n'affichons aucune publicité et ne pratiquons aucun pistage comportemental ni aucune analyse de votre activité financière.</p>
+    <h2>Durée de conservation</h2>
+    <p>Les données sur votre appareil y restent jusqu'à ce que vous les supprimiez ou désinstalliez l'application. Votre compte, vos données synchronisées, vos compteurs d'utilisation et les métadonnées des requêtes sont conservés tant que votre compte existe, uniquement pour faire fonctionner le service et appliquer les limites de votre formule, et sont définitivement effacés lorsque vous le supprimez. Paddle conserve les justificatifs de facturation qu'il est légalement tenu de conserver.</p>
+    <h2>Vos droits et vos choix</h2>
+    <p>Vous pouvez à tout moment consulter et corriger vos données dans l'application, exporter une sauvegarde complète, désactiver la synchronisation, vous déconnecter et supprimer votre compte avec toutes ses données (voir ci-dessous). Vous pouvez résilier un abonnement payant à tout moment (voir les Conditions). Pour toute autre demande concernant vos données personnelles, notamment l'accès, la rectification, l'effacement ou l'opposition, contactez-nous à <a href="mailto:support@dgotix.com">support@dgotix.com</a> et nous vous répondrons rapidement.</p>
+    <h2>Supprimer votre compte et vos données</h2>
+    <p>Dans l'application ou la version web, sur n'importe quel appareil, ouvrez Paramètres, puis Compte, puis « Supprimer mon compte ». Cela supprime définitivement votre compte et tout ce qui est stocké pour lui sur nos serveurs (profil, données synchronisées, enregistrement d'abonnement et compteurs d'utilisation), et efface vos données sur cet appareil. Résiliez d'abord tout abonnement payant. La suppression est irréversible : exportez une sauvegarde avant si vous pourriez avoir besoin de vos données plus tard.</p>
+    <h2>Âge</h2>
+    <p>SmartBudget est destiné aux personnes âgées de 16 ans et plus. Nous ne collectons pas sciemment de données concernant des enfants plus jeunes ; si vous pensez qu'un enfant a créé un compte, contactez-nous à <a href="mailto:support@dgotix.com">support@dgotix.com</a> et nous le supprimerons.</p>
+    <h2>Modifications et contact</h2>
+    <p>Nous pouvons mettre à jour cette politique ; la date indiquée ci-dessus correspond à la dernière version. Pour toute question sur la confidentialité, contactez-nous à <a href="mailto:support@dgotix.com">support@dgotix.com</a>.</p>
+    <p class="meta" style="margin-top:20px"><a href="terms.html#fr">Conditions d'utilisation</a> · <a href="privacy.html#fr">Politique de confidentialité</a> · <a href="refund.html#fr">Politique de remboursement</a></p>
   </article>
 
   <footer><span dir="ltr">© 2026 DGOTIX</span></footer>

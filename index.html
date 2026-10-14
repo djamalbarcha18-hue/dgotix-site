@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dgotix.com/">
 <meta property="og:title" content="DGOTIX — Digital Productivity Solutions">
-<meta property="og:description" content="تطبيقات عربية وعالمية بسيطة لتنظيم مالك ووقتك · Simple bilingual apps for your money and time.">
+<meta property="og:description" content="تطبيقات عربية وعالمية بسيطة لتنظيم مالك ووقتك · Simple apps in Arabic, English and French for your money and time · Des applications simples pour votre argent et votre temps.">
 <meta property="og:image" content="https://dgotix.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="smartbudget-icon.png">
@@ -36,11 +36,11 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:80px}
   body{font-family:Tajawal,Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
-  html[lang=en] body{font-family:Inter,Tajawal,system-ui,sans-serif;line-height:1.6}
+  html[lang=en] body,html[lang=fr] body{font-family:Inter,Tajawal,system-ui,sans-serif;line-height:1.6}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;height:auto;display:block}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-  html:not([lang=en]) [data-en]{display:none!important} html[lang=en] [data-ar]{display:none!important}
+  html:not([lang=en]) [data-en],html:not([lang=fr]) [data-fr],html[lang=en] [data-ar],html[lang=fr] [data-ar]{display:none!important}
 
   /* header */
   header{position:sticky;top:0;z-index:20;background:rgba(247,249,252,.82);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid rgba(226,232,240,.7)}
@@ -59,7 +59,7 @@
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);color:#1D4ED8;font-weight:700;font-size:14px;border-radius:999px;padding:6px 14px;font-family:Inter,Tajawal,sans-serif;letter-spacing:.3px}
   .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block}
   h1{font-size:clamp(34px,6vw,60px);line-height:1.18;font-weight:900;margin:20px 0 18px;letter-spacing:-.5px}
-  html[lang=en] h1{font-weight:700;letter-spacing:-1.5px}
+  html[lang=en] h1,html[lang=fr] h1{font-weight:700;letter-spacing:-1.5px}
   h1 em{font-style:normal;color:var(--brand)}
   .lead{font-size:clamp(17px,2.2vw,20px);color:var(--body);max-width:640px}
   .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -72,7 +72,7 @@
   section{padding:70px 0}
   .sec-head{max-width:640px;margin-bottom:34px}
   .sec-head h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;line-height:1.25}
-  html[lang=en] .sec-head h2{font-weight:700;letter-spacing:-.6px}
+  html[lang=en] .sec-head h2,html[lang=fr] .sec-head h2{font-weight:700;letter-spacing:-.6px}
   .sec-head p{color:var(--body);margin-top:10px;font-size:17px}
 
   /* products */
@@ -108,7 +108,7 @@
   /* contact */
   .contact{background:linear-gradient(135deg,#EAF3FF 0%,#EEF8F4 100%);border:1px solid #DCE8F7;border-radius:28px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .contact h2{font-size:clamp(24px,3.2vw,32px);font-weight:900}
-  html[lang=en] .contact h2{font-weight:700}
+  html[lang=en] .contact h2,html[lang=fr] .contact h2{font-weight:700}
   .contact p{color:var(--body);margin-top:6px}
 
   footer{padding:34px 0 40px;color:var(--muted);font-size:14px}
@@ -212,13 +212,13 @@
   <div class="wrap nav">
     <a href="#top" aria-label="DGOTIX"><img class="logo" src="logo.svg" alt="DGOTIX"></a>
     <div class="nav-links">
-      <a href="#products"><span data-ar>المنتجات</span><span data-en>Products</span></a>
-      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span></a>
-      <a href="#analytics"><span data-ar>التحليلات</span><span data-en>Analytics</span></a>
-      <a href="#markets"><span data-ar>الأسواق</span><span data-en>Markets</span></a>
-      <a href="#why"><span data-ar>لماذا DGOTIX</span><span data-en>Why DGOTIX</span></a>
-      <a href="#contact"><span data-ar>تواصل معنا</span><span data-en>Contact</span></a>
-      <button class="lang" id="lang" type="button" aria-label="Switch language">English</button>
+      <a href="#products"><span data-ar>المنتجات</span><span data-en>Products</span><span data-fr>Produits</span></a>
+      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span><span data-fr>Tarifs</span></a>
+      <a href="#analytics"><span data-ar>التحليلات</span><span data-en>Analytics</span><span data-fr>Analyses</span></a>
+      <a href="#markets"><span data-ar>الأسواق</span><span data-en>Markets</span><span data-fr>Marchés</span></a>
+      <a href="#why"><span data-ar>لماذا DGOTIX</span><span data-en>Why DGOTIX</span><span data-fr>Pourquoi DGOTIX</span></a>
+      <a href="#contact"><span data-ar>تواصل معنا</span><span data-en>Contact</span><span data-fr>Contact</span></a>
+      <select class="lang" id="lang" aria-label="اللغة · Language · Langue"><option value="ar">العربية</option><option value="en">English</option><option value="fr">Français</option></select>
     </div>
   </div>
 </header>
@@ -230,18 +230,18 @@
       <span class="eyebrow"><i></i>Digital Productivity Solutions</span>
       <h1>
         <span data-ar>أدوات رقمية بسيطة<br>تنظّم <em>مالك ووقتك</em></span>
-        <span data-en>Simple digital tools<br>for your <em>money and time</em></span>
+        <span data-en>Simple digital tools<br>for your <em>money and time</em></span><span data-fr>Des outils numériques simples<br>pour votre <em>argent et votre temps</em></span>
       </h1>
       <p class="lead">
         <span data-ar>في DGOTIX نصمّم تطبيقات عربية وعالمية، واضحة وآمنة، تعمل على الجوال والكمبيوتر، لتنجز أكثر بجهد أقل.</span>
-        <span data-en>At DGOTIX we design clear, secure apps in Arabic and English that work on your phone and your computer — so you get more done with less effort.</span>
+        <span data-en>At DGOTIX we design clear, secure apps in Arabic, English and French that work on your phone and your computer — so you get more done with less effort.</span><span data-fr>Chez DGOTIX, nous concevons des applications claires et sûres, en arabe, en français et en anglais, qui fonctionnent sur votre téléphone et votre ordinateur : pour en faire plus avec moins d'effort.</span>
       </p>
       <div class="cta">
         <a class="btn btn-primary" href="https://smartbudget.dgotix.com/">
-          <span data-ar>جرّب سمارت بدجت</span><span data-en>Try SmartBudget</span>
+          <span data-ar>جرّب سمارت بدجت</span><span data-en>Try SmartBudget</span><span data-fr>Essayer SmartBudget</span>
           <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn-ghost" href="#products"><span data-ar>تعرّف على منتجاتنا</span><span data-en>Explore our products</span></a>
+        <a class="btn btn-ghost" href="#products"><span data-ar>تعرّف على منتجاتنا</span><span data-en>Explore our products</span><span data-fr>Découvrir nos produits</span></a>
       </div>
     </div>
   </div>
@@ -250,8 +250,8 @@
   <section id="products">
     <div class="wrap">
       <div class="sec-head">
-        <h2><span data-ar>منتجاتنا</span><span data-en>Our products</span></h2>
-        <p><span data-ar>نبدأ بالمال، لأن تنظيمه أول خطوة نحو راحة البال.</span><span data-en>We start with money — because getting it in order is the first step to peace of mind.</span></p>
+        <h2><span data-ar>منتجاتنا</span><span data-en>Our products</span><span data-fr>Nos produits</span></h2>
+        <p><span data-ar>نبدأ بالمال، لأن تنظيمه أول خطوة نحو راحة البال.</span><span data-en>We start with money — because getting it in order is the first step to peace of mind.</span><span data-fr>Nous commençons par l'argent : le mettre en ordre est le premier pas vers la tranquillité d'esprit.</span></p>
       </div>
 
       <article class="product">
@@ -260,33 +260,33 @@
             <img src="smartbudget-icon.png" alt="">
             <div>
               <div class="p-name">Smart<b>Budget</b></div>
-              <span class="badge live"><span data-ar>متاح الآن على الويب</span><span data-en>Live on the web</span></span>
+              <span class="badge live"><span data-ar>متاح الآن على الويب</span><span data-en>Live on the web</span><span data-fr>Disponible sur le web</span></span>
             </div>
           </div>
           <p class="p-desc">
             <span data-ar>تطبيق الميزانية الذكي: دخلك ومصاريفك وصافي شهرك في لوحة واحدة، بكل العملات العربية والعالمية.</span>
-            <span data-en>The smart budget planner: your income, spending and monthly net in one dashboard — in every Arab and world currency.</span>
+            <span data-en>The smart budget planner: your income, spending and monthly net in one dashboard — in every Arab and world currency.</span><span data-fr>Le planificateur de budget intelligent : vos revenus, vos dépenses et votre solde mensuel dans un seul tableau de bord, dans toutes les devises arabes et mondiales.</span>
           </p>
           <ul class="feats">
-            <li><span data-ar>محافظ متعددة العملات ومحوّل فوري</span><span data-en>Multi-currency wallets &amp; converter</span></li>
-            <li><span data-ar>ماسح الفواتير الذكي</span><span data-en>Smart receipt scanner</span></li>
-            <li><span data-ar>إدخال سريع بكلمة: «قهوة 18»</span><span data-en>Quick entry in plain words</span></li>
-            <li><span data-ar>الصحة المالية ونصائح واضحة</span><span data-en>Financial health score</span></li>
-            <li><span data-ar>حاسبة الزكاة وميزانيات رمضان والأعياد</span><span data-en>Zakat calculator, Ramadan &amp; Eid budgets</span></li>
-            <li><span data-ar>مستشار مالي بالذكاء الاصطناعي</span><span data-en>AI money advisor</span></li>
-            <li><span data-ar>تقارير PDF احترافية</span><span data-en>Professional PDF reports</span></li>
-            <li><span data-ar>عربي وإنجليزي، داكن وفاتح</span><span data-en>Arabic &amp; English, dark &amp; light</span></li>
+            <li><span data-ar>محافظ متعددة العملات ومحوّل فوري</span><span data-en>Multi-currency wallets &amp; converter</span><span data-fr>Portefeuilles multidevises et convertisseur</span></li>
+            <li><span data-ar>ماسح الفواتير الذكي</span><span data-en>Smart receipt scanner</span><span data-fr>Scanner de tickets intelligent</span></li>
+            <li><span data-ar>إدخال سريع بكلمة: «قهوة 18»</span><span data-en>Quick entry in plain words</span><span data-fr>Saisie rapide en langage courant</span></li>
+            <li><span data-ar>الصحة المالية ونصائح واضحة</span><span data-en>Financial health score</span><span data-fr>Score de santé financière</span></li>
+            <li><span data-ar>حاسبة الزكاة وميزانيات رمضان والأعياد</span><span data-en>Zakat calculator, Ramadan &amp; Eid budgets</span><span data-fr>Calcul de la zakat, budgets du Ramadan et de l'Aïd</span></li>
+            <li><span data-ar>مستشار مالي بالذكاء الاصطناعي</span><span data-en>AI money advisor</span><span data-fr>Conseiller financier IA</span></li>
+            <li><span data-ar>تقارير PDF احترافية</span><span data-en>Professional PDF reports</span><span data-fr>Rapports PDF professionnels</span></li>
+            <li><span data-ar>عربي وإنجليزي وفرنسي، داكن وفاتح</span><span data-en>Arabic, English &amp; French, dark &amp; light</span><span data-fr>Arabe, français et anglais, mode sombre et clair</span></li>
           </ul>
           <div class="cta" style="margin-top:0">
             <a class="btn btn-primary" href="https://smartbudget.dgotix.com/">
-              <span data-ar>افتح سمارت بدجت</span><span data-en>Open SmartBudget</span>
+              <span data-ar>افتح سمارت بدجت</span><span data-en>Open SmartBudget</span><span data-fr>Ouvrir SmartBudget</span>
               <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </div>
           <div class="platforms">
-            <span><span data-ar>الويب · متاح</span><span data-en>Web · available</span></span>
-            <span><span data-ar>Google Play · قريباً</span><span data-en>Google Play · coming soon</span></span>
-            <span><span data-ar>App Store · قريباً</span><span data-en>App Store · coming soon</span></span>
+            <span><span data-ar>الويب · متاح</span><span data-en>Web · available</span><span data-fr>Web · disponible</span></span>
+            <span><span data-ar>Google Play · قريباً</span><span data-en>Google Play · coming soon</span><span data-fr>Google Play · bientôt</span></span>
+            <span><span data-ar>App Store · قريباً</span><span data-en>App Store · coming soon</span><span data-fr>App Store · bientôt</span></span>
           </div>
         </div>
         <div class="shot"><img src="smartbudget-dashboard.jpg" alt="SmartBudget dashboard" loading="lazy" width="1400" height="875"></div>
@@ -296,16 +296,16 @@
         <div class="soon-card">
           <div class="soon-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1680F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
           <div>
-            <span class="badge soon"><span data-ar>قريباً</span><span data-en>Coming soon</span></span>
-            <h3><span data-ar>منتجات جديدة في الطريق</span><span data-en>More products on the way</span></h3>
-            <p><span data-ar>نعمل على أدوات إنتاجية جديدة بنفس البساطة والعناية.</span><span data-en>New productivity tools, built with the same simplicity and care.</span></p>
+            <span class="badge soon"><span data-ar>قريباً</span><span data-en>Coming soon</span><span data-fr>Bientôt</span></span>
+            <h3><span data-ar>منتجات جديدة في الطريق</span><span data-en>More products on the way</span><span data-fr>D'autres produits arrivent</span></h3>
+            <p><span data-ar>نعمل على أدوات إنتاجية جديدة بنفس البساطة والعناية.</span><span data-en>New productivity tools, built with the same simplicity and care.</span><span data-fr>De nouveaux outils de productivité, conçus avec la même simplicité et le même soin.</span></p>
           </div>
         </div>
         <div class="soon-card">
           <div class="soon-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F9F7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg></div>
           <div>
-            <h3><span data-ar>لديك فكرة أو احتياج؟</span><span data-en>Have an idea or a need?</span></h3>
-            <p><span data-ar>أخبرنا ما الذي يضيّع وقتك، فقد يكون منتجنا القادم.</span><span data-en>Tell us what wastes your time — it might become our next product.</span></p>
+            <h3><span data-ar>لديك فكرة أو احتياج؟</span><span data-en>Have an idea or a need?</span><span data-fr>Une idée ou un besoin ?</span></h3>
+            <p><span data-ar>أخبرنا ما الذي يضيّع وقتك، فقد يكون منتجنا القادم.</span><span data-en>Tell us what wastes your time — it might become our next product.</span><span data-fr>Dites-nous ce qui vous fait perdre du temps : c'est peut-être notre prochain produit.</span></p>
           </div>
         </div>
       </div>
@@ -316,68 +316,68 @@
   <section id="pricing" style="padding-top:20px">
     <div class="wrap">
       <div class="sec-head">
-        <h2><span data-ar>أسعار سمارت بدجت</span><span data-en>SmartBudget pricing</span></h2>
-        <p><span data-ar>ابدأ مجاناً بلا بطاقة. رقِّ متى احتجت، وألغِ في أي وقت.</span><span data-en>Start free, no card needed. Upgrade when you need to, cancel any time.</span></p>
+        <h2><span data-ar>أسعار سمارت بدجت</span><span data-en>SmartBudget pricing</span><span data-fr>Tarifs de SmartBudget</span></h2>
+        <p><span data-ar>ابدأ مجاناً بلا بطاقة. رقِّ متى احتجت، وألغِ في أي وقت.</span><span data-en>Start free, no card needed. Upgrade when you need to, cancel any time.</span><span data-fr>Commencez gratuitement, sans carte bancaire. Passez à une formule supérieure quand vous en avez besoin, résiliez à tout moment.</span></p>
       </div>
       <div class="bill">
         <div class="seg" role="group" aria-label="Billing period">
-          <button type="button" data-period="yearly" aria-pressed="true"><span data-ar>سنوي (وفّر حتى 35%)</span><span data-en>Yearly (save up to 35%)</span></button>
-          <button type="button" data-period="monthly" aria-pressed="false"><span data-ar>شهري</span><span data-en>Monthly</span></button>
+          <button type="button" data-period="yearly" aria-pressed="true"><span data-ar>سنوي (وفّر حتى 35%)</span><span data-en>Yearly (save up to 35%)</span><span data-fr>Annuel (jusqu'à 35 % d'économie)</span></button>
+          <button type="button" data-period="monthly" aria-pressed="false"><span data-ar>شهري</span><span data-en>Monthly</span><span data-fr>Mensuel</span></button>
         </div>
       </div>
       <div class="plans">
         <article class="plan">
-          <h3><span data-ar>المجانية</span><span data-en>Free</span></h3>
-          <p class="for"><span data-ar>لتبدأ وتنظّم مصاريفك</span><span data-en>To start and get organized</span></p>
+          <h3><span data-ar>المجانية</span><span data-en>Free</span><span data-fr>Gratuit</span></h3>
+          <p class="for"><span data-ar>لتبدأ وتنظّم مصاريفك</span><span data-en>To start and get organized</span><span data-fr>Pour commencer et s'organiser</span></p>
           <div class="price"><b>$0</b></div>
-          <div class="per"><span data-ar>مجاناً دائماً</span><span data-en>Free forever</span></div>
+          <div class="per"><span data-ar>مجاناً دائماً</span><span data-en>Free forever</span><span data-fr>Gratuit pour toujours</span></div>
           <ul>
-            <li><span data-ar>تسجيل المصاريف والدخل بلا حدود</span><span data-en>Unlimited expense and income tracking</span></li>
-            <li><span data-ar>محفظتان بعملة واحدة · 5 ميزانيات · هدف واحد</span><span data-en>2 wallets in one currency · 5 budgets · 1 goal</span></li>
-            <li><span data-ar>تقارير الشهر الحالي والسابق</span><span data-en>Reports for this month and last</span></li>
-            <li><span data-ar>حاسبة الزكاة وقفل التطبيق</span><span data-en>Zakat calculator and app lock</span></li>
-            <li><span data-ar>5 إجابات من المستشار الذكي و3 مسوحات سحابية للتجربة</span><span data-en>5 AI answers and 3 cloud scans to try</span></li>
+            <li><span data-ar>تسجيل المصاريف والدخل بلا حدود</span><span data-en>Unlimited expense and income tracking</span><span data-fr>Suivi illimité des dépenses et des revenus</span></li>
+            <li><span data-ar>محفظتان بعملة واحدة · 5 ميزانيات · هدف واحد</span><span data-en>2 wallets in one currency · 5 budgets · 1 goal</span><span data-fr>2 portefeuilles dans une devise · 5 budgets · 1 objectif</span></li>
+            <li><span data-ar>تقارير الشهر الحالي والسابق</span><span data-en>Reports for this month and last</span><span data-fr>Rapports du mois en cours et du mois précédent</span></li>
+            <li><span data-ar>حاسبة الزكاة وقفل التطبيق</span><span data-en>Zakat calculator and app lock</span><span data-fr>Calcul de la zakat et verrouillage de l'application</span></li>
+            <li><span data-ar>5 إجابات من المستشار الذكي و3 مسوحات سحابية للتجربة</span><span data-en>5 AI answers and 3 cloud scans to try</span><span data-fr>5 réponses IA et 3 scans dans le cloud pour essayer</span></li>
           </ul>
-          <a class="btn btn-ghost" href="https://smartbudget.dgotix.com/"><span data-ar>ابدأ مجاناً</span><span data-en>Start free</span></a>
+          <a class="btn btn-ghost" href="https://smartbudget.dgotix.com/"><span data-ar>ابدأ مجاناً</span><span data-en>Start free</span><span data-fr>Commencer gratuitement</span></a>
         </article>
         <article class="plan">
-          <h3><span data-ar>الأساسية</span><span data-en>Basic</span></h3>
-          <p class="for"><span data-ar>للاستعمال اليومي والمغتربين</span><span data-en>For everyday use and expats</span></p>
+          <h3><span data-ar>الأساسية</span><span data-en>Basic</span><span data-fr>Basic</span></h3>
+          <p class="for"><span data-ar>للاستعمال اليومي والمغتربين</span><span data-en>For everyday use and expats</span><span data-fr>Pour le quotidien et les expatriés</span></p>
           <div class="price" data-m="4.99" data-y="39.99"><b>$39.99</b><small data-u></small></div>
           <div class="per" data-pm="3.33"></div>
           <ul>
-            <li><span data-ar>كل ما في المجانية</span><span data-en>Everything in Free</span></li>
-            <li><span data-ar>محافظ بكل العملات بلا حدود</span><span data-en>Unlimited wallets in every currency</span></li>
-            <li><span data-ar>ميزانيات وأهداف وديون وجمعيات بلا حدود</span><span data-en>Unlimited budgets, goals, debts and darets</span></li>
-            <li><span data-ar>كل فترات التقارير ولأي سنة</span><span data-en>Every report period, any year</span></li>
-            <li><span data-ar>السعر الموازي لأسعار الصرف</span><span data-en>Parallel exchange rates</span></li>
-            <li><span data-ar>مزامنة بين الجوال والكمبيوتر</span><span data-en>Sync between phone and computer</span></li>
-            <li><span data-ar>تفاصيل الصحة المالية وتقسيم الراتب الذكي</span><span data-en>Health details and smart salary split</span></li>
-            <li><span data-ar>25 إجابة ذكية و15 مسحاً سحابياً شهرياً</span><span data-en>25 AI answers and 15 cloud scans a month</span></li>
+            <li><span data-ar>كل ما في المجانية</span><span data-en>Everything in Free</span><span data-fr>Tout ce qu'inclut Gratuit</span></li>
+            <li><span data-ar>محافظ بكل العملات بلا حدود</span><span data-en>Unlimited wallets in every currency</span><span data-fr>Portefeuilles illimités dans toutes les devises</span></li>
+            <li><span data-ar>ميزانيات وأهداف وديون وجمعيات بلا حدود</span><span data-en>Unlimited budgets, goals, debts and darets</span><span data-fr>Budgets, objectifs, dettes et tontines illimités</span></li>
+            <li><span data-ar>كل فترات التقارير ولأي سنة</span><span data-en>Every report period, any year</span><span data-fr>Toutes les périodes de rapport, pour toute année</span></li>
+            <li><span data-ar>السعر الموازي لأسعار الصرف</span><span data-en>Parallel exchange rates</span><span data-fr>Taux de change parallèles</span></li>
+            <li><span data-ar>مزامنة بين الجوال والكمبيوتر</span><span data-en>Sync between phone and computer</span><span data-fr>Synchronisation entre téléphone et ordinateur</span></li>
+            <li><span data-ar>تفاصيل الصحة المالية وتقسيم الراتب الذكي</span><span data-en>Health details and smart salary split</span><span data-fr>Détails de santé et répartition intelligente du salaire</span></li>
+            <li><span data-ar>25 إجابة ذكية و15 مسحاً سحابياً شهرياً</span><span data-en>25 AI answers and 15 cloud scans a month</span><span data-fr>25 réponses IA et 15 scans dans le cloud par mois</span></li>
           </ul>
-          <a class="btn btn-ghost" href="https://smartbudget.dgotix.com/#/plans"><span data-ar>اختر الأساسية</span><span data-en>Choose Basic</span></a>
+          <a class="btn btn-ghost" href="https://smartbudget.dgotix.com/#/plans"><span data-ar>اختر الأساسية</span><span data-en>Choose Basic</span><span data-fr>Choisir Basic</span></a>
         </article>
         <article class="plan best">
-          <h3><span data-ar>الاحترافية</span><span data-en>Pro</span> <span class="tag"><span data-ar>الأفضل قيمة</span><span data-en>Best value</span></span></h3>
-          <p class="for"><span data-ar>للدخل المتعدد والاستثمار</span><span data-en>For multiple incomes and investing</span></p>
+          <h3><span data-ar>الاحترافية</span><span data-en>Pro</span><span data-fr>Pro</span> <span class="tag"><span data-ar>الأفضل قيمة</span><span data-en>Best value</span><span data-fr>Le meilleur rapport qualité-prix</span></span></h3>
+          <p class="for"><span data-ar>للدخل المتعدد والاستثمار</span><span data-en>For multiple incomes and investing</span><span data-fr>Pour plusieurs revenus et l'investissement</span></p>
           <div class="price" data-m="8.99" data-y="69.99"><b>$69.99</b><small data-u></small></div>
           <div class="per" data-pm="5.83"></div>
           <ul>
-            <li><span data-ar>كل ما في الأساسية</span><span data-en>Everything in Basic</span></li>
-            <li class="star"><span data-ar>تصدير التقارير PDF</span><span data-en>PDF report export</span></li>
-            <li class="star"><span data-ar>الرسم السنوي ومقارنة الأشهر</span><span data-en>Yearly trend chart</span></li>
-            <li class="star"><span data-ar>التنبيهات الذكية</span><span data-en>Smart alerts</span></li>
-            <li class="star"><span data-ar>الذهب والعملات الرقمية والسلع</span><span data-en>Gold, crypto and commodities</span></li>
-            <li class="star"><span data-ar>محفظة المشاريع والاستثمار</span><span data-en>Projects and investment portfolio</span></li>
-            <li><span data-ar>100 إجابة ذكية و50 مسحاً سحابياً شهرياً</span><span data-en>100 AI answers and 50 cloud scans a month</span></li>
-            <li><span data-ar>دعم بأولوية</span><span data-en>Priority support</span></li>
+            <li><span data-ar>كل ما في الأساسية</span><span data-en>Everything in Basic</span><span data-fr>Tout ce qu'inclut Basic</span></li>
+            <li class="star"><span data-ar>تصدير التقارير PDF</span><span data-en>PDF report export</span><span data-fr>Export des rapports en PDF</span></li>
+            <li class="star"><span data-ar>الرسم السنوي ومقارنة الأشهر</span><span data-en>Yearly trend chart</span><span data-fr>Graphique d'évolution annuelle</span></li>
+            <li class="star"><span data-ar>التنبيهات الذكية</span><span data-en>Smart alerts</span><span data-fr>Alertes intelligentes</span></li>
+            <li class="star"><span data-ar>الذهب والعملات الرقمية والسلع</span><span data-en>Gold, crypto and commodities</span><span data-fr>Or, crypto et matières premières</span></li>
+            <li class="star"><span data-ar>محفظة المشاريع والاستثمار</span><span data-en>Projects and investment portfolio</span><span data-fr>Projets et portefeuille d'investissement</span></li>
+            <li><span data-ar>100 إجابة ذكية و50 مسحاً سحابياً شهرياً</span><span data-en>100 AI answers and 50 cloud scans a month</span><span data-fr>100 réponses IA et 50 scans dans le cloud par mois</span></li>
+            <li><span data-ar>دعم بأولوية</span><span data-en>Priority support</span><span data-fr>Assistance prioritaire</span></li>
           </ul>
-          <a class="btn btn-primary" href="https://smartbudget.dgotix.com/#/plans"><span data-ar>اختر الاحترافية</span><span data-en>Choose Pro</span></a>
+          <a class="btn btn-primary" href="https://smartbudget.dgotix.com/#/plans"><span data-ar>اختر الاحترافية</span><span data-en>Choose Pro</span><span data-fr>Choisir Pro</span></a>
         </article>
       </div>
       <p class="price-note">
         <span data-ar>الأسعار بالدولار الأمريكي، وقد تكون أقل في بلدك؛ يظهر السعر النهائي بعملتك عند الدفع، وتُضاف الضرائب حيث تنطبق. الدفع آمن عبر موزّعنا المعتمد Paddle.com (البائع المسجَّل). اطّلع على <a href="terms.html">شروط الاستخدام</a> و<a href="refund.html">سياسة الاسترجاع</a>.</span>
-        <span data-en>Prices in US dollars and may be lower in your country; the final price shows in your currency at checkout, with tax where it applies. Secure payments by our online reseller Paddle.com (Merchant of Record). See the <a href="terms.html#en">terms</a> and <a href="refund.html#en">refund policy</a>.</span>
+        <span data-en>Prices in US dollars and may be lower in your country; the final price shows in your currency at checkout, with tax where it applies. Secure payments by our online reseller Paddle.com (Merchant of Record). See the <a href="terms.html#en">terms</a> and <a href="refund.html#en">refund policy</a>.</span><span data-fr>Prix en dollars américains, parfois plus bas dans votre pays ; le prix final s'affiche dans votre devise au paiement, taxes comprises le cas échéant. Paiements sécurisés par notre revendeur en ligne Paddle.com (marchand officiel). Voir les <a href="terms.html#fr">conditions</a> et la <a href="refund.html#fr">politique de remboursement</a>.</span>
       </p>
     </div>
   </section>
@@ -388,41 +388,41 @@
   <section id="analytics" style="padding-top:20px">
     <div class="wrap">
       <div class="sec-head">
-        <h2><span data-ar>تحليلات تفهم مالك</span><span data-en>Analytics that make sense of your money</span></h2>
-        <p><span data-ar>قارن دخلك ومصاريفك، واعرف كم ادّخرت فعلاً: شهرياً، ربع سنوي، نصف سنوي وسنوياً — كما في لوحة التقارير داخل سمارت بدجت.</span><span data-en>Compare income and spending and see what you really saved — monthly, quarterly, half-yearly and yearly, just like the reports inside SmartBudget.</span></p>
+        <h2><span data-ar>تحليلات تفهم مالك</span><span data-en>Analytics that make sense of your money</span><span data-fr>Des analyses qui donnent du sens à votre argent</span></h2>
+        <p><span data-ar>قارن دخلك ومصاريفك، واعرف كم ادّخرت فعلاً: شهرياً، ربع سنوي، نصف سنوي وسنوياً — كما في لوحة التقارير داخل سمارت بدجت.</span><span data-en>Compare income and spending and see what you really saved — monthly, quarterly, half-yearly and yearly, just like the reports inside SmartBudget.</span><span data-fr>Comparez revenus et dépenses et voyez ce que vous avez vraiment épargné : par mois, trimestre, semestre et année, comme dans les rapports de SmartBudget.</span></p>
       </div>
       <div class="viz-card viz-root">
         <div class="seg" role="group" aria-label="Period" id="seg">
-          <button type="button" data-p="m" aria-pressed="true"><span data-ar>شهري</span><span data-en>Monthly</span></button>
-          <button type="button" data-p="q" aria-pressed="false"><span data-ar>ربع سنوي</span><span data-en>Quarterly</span></button>
-          <button type="button" data-p="h" aria-pressed="false"><span data-ar>نصف سنوي</span><span data-en>Half-yearly</span></button>
-          <button type="button" data-p="y" aria-pressed="false"><span data-ar>سنوي</span><span data-en>Yearly</span></button>
+          <button type="button" data-p="m" aria-pressed="true"><span data-ar>شهري</span><span data-en>Monthly</span><span data-fr>Mensuel</span></button>
+          <button type="button" data-p="q" aria-pressed="false"><span data-ar>ربع سنوي</span><span data-en>Quarterly</span><span data-fr>Trimestriel</span></button>
+          <button type="button" data-p="h" aria-pressed="false"><span data-ar>نصف سنوي</span><span data-en>Half-yearly</span><span data-fr>Semestriel</span></button>
+          <button type="button" data-p="y" aria-pressed="false"><span data-ar>سنوي</span><span data-en>Yearly</span><span data-fr>Annuel</span></button>
         </div>
         <p class="note" id="kcap" style="margin:18px 0 0;font-weight:700;color:var(--text-secondary)"></p>
         <div class="kpis" style="margin-top:8px">
-          <div class="kpi"><div class="k"><i style="background:var(--s-income)"></i><span data-ar>الدخل</span><span data-en>Income</span></div><div class="v" id="kI"></div></div>
-          <div class="kpi"><div class="k"><i style="background:var(--s-expense)"></i><span data-ar>المصاريف</span><span data-en>Expenses</span></div><div class="v" id="kE"></div></div>
-          <div class="kpi"><div class="k"><i class="line" style="background:var(--s-saving)"></i><span data-ar>المدّخرات (الفرق)</span><span data-en>Savings (the gap)</span></div><div class="v" id="kS"></div></div>
-          <div class="kpi"><div class="k"><span data-ar>معدّل الادخار</span><span data-en>Savings rate</span></div><div class="v" id="kR"></div></div>
+          <div class="kpi"><div class="k"><i style="background:var(--s-income)"></i><span data-ar>الدخل</span><span data-en>Income</span><span data-fr>Revenus</span></div><div class="v" id="kI"></div></div>
+          <div class="kpi"><div class="k"><i style="background:var(--s-expense)"></i><span data-ar>المصاريف</span><span data-en>Expenses</span><span data-fr>Dépenses</span></div><div class="v" id="kE"></div></div>
+          <div class="kpi"><div class="k"><i class="line" style="background:var(--s-saving)"></i><span data-ar>المدّخرات (الفرق)</span><span data-en>Savings (the gap)</span><span data-fr>Épargne (l'écart)</span></div><div class="v" id="kS"></div></div>
+          <div class="kpi"><div class="k"><span data-ar>معدّل الادخار</span><span data-en>Savings rate</span><span data-fr>Taux d'épargne</span></div><div class="v" id="kR"></div></div>
         </div>
         <div class="legend">
-          <span><i style="background:var(--s-income)"></i><span data-ar>الدخل</span><span data-en>Income</span></span>
-          <span><i style="background:var(--s-expense)"></i><span data-ar>المصاريف</span><span data-en>Expenses</span></span>
-          <span><i class="line" style="background:var(--s-saving)"></i><span data-ar>المدّخرات = الدخل − المصاريف</span><span data-en>Savings = income − expenses</span></span>
+          <span><i style="background:var(--s-income)"></i><span data-ar>الدخل</span><span data-en>Income</span><span data-fr>Revenus</span></span>
+          <span><i style="background:var(--s-expense)"></i><span data-ar>المصاريف</span><span data-en>Expenses</span><span data-fr>Dépenses</span></span>
+          <span><i class="line" style="background:var(--s-saving)"></i><span data-ar>المدّخرات = الدخل − المصاريف</span><span data-en>Savings = income − expenses</span><span data-fr>Épargne = revenus − dépenses</span></span>
         </div>
         <div class="chart-wrap">
           <svg id="chart" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Income, expenses and savings"></svg>
           <div class="tip" id="tip" role="status" aria-live="polite"></div>
         </div>
         <details class="tbl">
-          <summary><span data-ar>عرض الأرقام كجدول</span><span data-en>Show the numbers as a table</span></summary>
+          <summary><span data-ar>عرض الأرقام كجدول</span><span data-en>Show the numbers as a table</span><span data-fr>Afficher les chiffres sous forme de tableau</span></summary>
           <table id="tbl"></table>
         </details>
-        <p class="note"><span data-ar>* أرقام توضيحية من حساب تجريبي بالريال القطري. داخل التطبيق تُحسب من معاملاتك أنت وبعملتك.</span><span data-en>* Illustrative figures from a demo account in Qatari riyals. In the app they come from your own transactions, in your currency.</span></p>
+        <p class="note"><span data-ar>* أرقام توضيحية من حساب تجريبي بالريال القطري. داخل التطبيق تُحسب من معاملاتك أنت وبعملتك.</span><span data-en>* Illustrative figures from a demo account in Qatari riyals. In the app they come from your own transactions, in your currency.</span><span data-fr>* Chiffres d'illustration issus d'un compte de démonstration en riyals qataris. Dans l'application, ils proviennent de vos propres transactions, dans votre devise.</span></p>
         <div class="an-grid">
-          <div class="an"><h3><span data-ar>مقارنة كل فترة بالتي قبلها</span><span data-en>Every period vs the last</span></h3><p><span data-ar>نسبة التغيّر في الدخل والمصاريف ومعدّل الادخار.</span><span data-en>Change in income, spending and savings rate.</span></p></div>
-          <div class="an"><h3><span data-ar>أين يذهب مالك</span><span data-en>Where your money goes</span></h3><p><span data-ar>توزيع المصاريف حسب الفئة، والدخل حسب المصدر.</span><span data-en>Spending by category and income by source.</span></p></div>
-          <div class="an"><h3><span data-ar>تقرير PDF لأي فترة</span><span data-en>A PDF report for any period</span></h3><p><span data-ar>شهر، ربع، نصف سنة أو سنة كاملة — بضغطة.</span><span data-en>Month, quarter, half-year or full year — in one tap.</span></p></div>
+          <div class="an"><h3><span data-ar>مقارنة كل فترة بالتي قبلها</span><span data-en>Every period vs the last</span><span data-fr>Chaque période comparée à la précédente</span></h3><p><span data-ar>نسبة التغيّر في الدخل والمصاريف ومعدّل الادخار.</span><span data-en>Change in income, spending and savings rate.</span><span data-fr>Évolution des revenus, des dépenses et du taux d'épargne.</span></p></div>
+          <div class="an"><h3><span data-ar>أين يذهب مالك</span><span data-en>Where your money goes</span><span data-fr>Où va votre argent</span></h3><p><span data-ar>توزيع المصاريف حسب الفئة، والدخل حسب المصدر.</span><span data-en>Spending by category and income by source.</span><span data-fr>Dépenses par catégorie et revenus par source.</span></p></div>
+          <div class="an"><h3><span data-ar>تقرير PDF لأي فترة</span><span data-en>A PDF report for any period</span><span data-fr>Un rapport PDF pour toute période</span></h3><p><span data-ar>شهر، ربع، نصف سنة أو سنة كاملة — بضغطة.</span><span data-en>Month, quarter, half-year or full year — in one tap.</span><span data-fr>Mois, trimestre, semestre ou année entière, en un geste.</span></p></div>
         </div>
       </div>
     </div>
@@ -433,17 +433,17 @@
     <div class="wrap mk">
       <div>
         <div class="sec-head" style="margin-bottom:6px">
-          <h2><span data-ar>الأسواق العالمية في جيبك</span><span data-en>World markets in your pocket</span></h2>
-          <p><span data-ar>تابع أسعار العملات والذهب والفضة والعملات الرقمية، وقارن السعر الرسمي بالموازي حيث يتوفر — قبل أن تحوّل أو تشتري.</span><span data-en>Follow currencies, gold, silver and crypto, and compare official and parallel rates where available — before you convert or buy.</span></p>
+          <h2><span data-ar>الأسواق العالمية في جيبك</span><span data-en>World markets in your pocket</span><span data-fr>Les marchés mondiaux dans votre poche</span></h2>
+          <p><span data-ar>تابع أسعار العملات والذهب والفضة والعملات الرقمية، وقارن السعر الرسمي بالموازي حيث يتوفر — قبل أن تحوّل أو تشتري.</span><span data-en>Follow currencies, gold, silver and crypto, and compare official and parallel rates where available — before you convert or buy.</span><span data-fr>Suivez les devises, l'or, l'argent et les cryptomonnaies, et comparez taux officiels et parallèles lorsqu'ils existent, avant de convertir ou d'acheter.</span></p>
         </div>
         <div class="chips">
-          <span class="chip"><i style="background:#2a78d6"></i><span data-ar>أكثر من 30 عملة</span><span data-en>30+ currencies</span></span>
-          <span class="chip"><i style="background:#6250d6"></i><span data-ar>الرسمي والموازي</span><span data-en>Official &amp; parallel rates</span></span>
-          <span class="chip"><i style="background:#eda100"></i><span data-ar>الذهب والفضة والبلاتين</span><span data-en>Gold, silver &amp; platinum</span></span>
-          <span class="chip"><i style="background:#1baf7a"></i><span data-ar>العملات الرقمية</span><span data-en>Crypto</span></span>
-          <span class="chip"><i style="background:#eb6834"></i><span data-ar>محوّل فوري</span><span data-en>Instant converter</span></span>
+          <span class="chip"><i style="background:#2a78d6"></i><span data-ar>أكثر من 30 عملة</span><span data-en>30+ currencies</span><span data-fr>Plus de 30 devises</span></span>
+          <span class="chip"><i style="background:#6250d6"></i><span data-ar>الرسمي والموازي</span><span data-en>Official &amp; parallel rates</span><span data-fr>Taux officiels et parallèles</span></span>
+          <span class="chip"><i style="background:#eda100"></i><span data-ar>الذهب والفضة والبلاتين</span><span data-en>Gold, silver &amp; platinum</span><span data-fr>Or, argent et platine</span></span>
+          <span class="chip"><i style="background:#1baf7a"></i><span data-ar>العملات الرقمية</span><span data-en>Crypto</span><span data-fr>Crypto</span></span>
+          <span class="chip"><i style="background:#eb6834"></i><span data-ar>محوّل فوري</span><span data-en>Instant converter</span><span data-fr>Convertisseur instantané</span></span>
         </div>
-        <p class="note"><span data-ar>* الصورة توضيحية بأسعار تجريبية. داخل التطبيق تُحدَّث الأسعار من مصادرها، والسعر الموازي متاح لبعض الدول فقط.</span><span data-en>* Illustrative screenshot with sample prices. In the app, prices update from their sources; parallel rates are available for some countries only.</span></p>
+        <p class="note"><span data-ar>* الصورة توضيحية بأسعار تجريبية. داخل التطبيق تُحدَّث الأسعار من مصادرها، والسعر الموازي متاح لبعض الدول فقط.</span><span data-en>* Illustrative screenshot with sample prices. In the app, prices update from their sources; parallel rates are available for some countries only.</span><span data-fr>* Capture d'illustration avec des prix d'exemple. Dans l'application, les prix se mettent à jour depuis leurs sources ; les taux parallèles ne sont disponibles que pour certains pays.</span></p>
       </div>
       <div class="shot"><img src="smartbudget-markets.jpg" alt="SmartBudget markets" loading="lazy" width="1400" height="875"></div>
     </div>
@@ -453,29 +453,29 @@
   <section id="why" style="background:var(--surface);border-block:1px solid var(--line)">
     <div class="wrap">
       <div class="sec-head">
-        <h2><span data-ar>لماذا DGOTIX؟</span><span data-en>Why DGOTIX?</span></h2>
-        <p><span data-ar>مبادئ نلتزم بها في كل منتج.</span><span data-en>The principles behind everything we build.</span></p>
+        <h2><span data-ar>لماذا DGOTIX؟</span><span data-en>Why DGOTIX?</span><span data-fr>Pourquoi DGOTIX ?</span></h2>
+        <p><span data-ar>مبادئ نلتزم بها في كل منتج.</span><span data-en>The principles behind everything we build.</span><span data-fr>Les principes derrière tout ce que nous créons.</span></p>
       </div>
       <div class="values">
         <div class="val">
           <div class="ic" style="background:var(--brand-soft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1680F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg></div>
-          <h3><span data-ar>عربي أولاً، عالمي دائماً</span><span data-en>Arabic first, global always</span></h3>
-          <p><span data-ar>واجهات عربية متقنة، وإنجليزية بنفس الجودة.</span><span data-en>Carefully crafted Arabic, with English of the same quality.</span></p>
+          <h3><span data-ar>عربي أولاً، عالمي دائماً</span><span data-en>Arabic first, global always</span><span data-fr>L'arabe d'abord, le monde toujours</span></h3>
+          <p><span data-ar>واجهات عربية متقنة، وإنجليزية وفرنسية بنفس الجودة.</span><span data-en>Carefully crafted Arabic, with English and French of the same quality.</span><span data-fr>Un arabe soigné, avec un français et un anglais de même qualité.</span></p>
         </div>
         <div class="val">
           <div class="ic" style="background:var(--mint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F9F7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-          <h3><span data-ar>خصوصيتك محترمة</span><span data-en>Your privacy, respected</span></h3>
-          <p><span data-ar>بياناتك لك، مع قفل التطبيق والنسخ الاحتياطي.</span><span data-en>Your data is yours — with app lock and backups.</span></p>
+          <h3><span data-ar>خصوصيتك محترمة</span><span data-en>Your privacy, respected</span><span data-fr>Votre vie privée respectée</span></h3>
+          <p><span data-ar>بياناتك لك، مع قفل التطبيق والنسخ الاحتياطي.</span><span data-en>Your data is yours — with app lock and backups.</span><span data-fr>Vos données vous appartiennent, avec verrouillage de l'application et sauvegardes.</span></p>
         </div>
         <div class="val">
           <div class="ic" style="background:#FEF5E7"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B7791F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
-          <h3><span data-ar>بساطة بلا تعقيد</span><span data-en>Simple, never complicated</span></h3>
-          <p><span data-ar>كل ميزة تُختبر بسؤال واحد: هل توفّر وقتك؟</span><span data-en>Every feature passes one test: does it save you time?</span></p>
+          <h3><span data-ar>بساطة بلا تعقيد</span><span data-en>Simple, never complicated</span><span data-fr>Simple, jamais compliqué</span></h3>
+          <p><span data-ar>كل ميزة تُختبر بسؤال واحد: هل توفّر وقتك؟</span><span data-en>Every feature passes one test: does it save you time?</span><span data-fr>Chaque fonctionnalité passe un test : vous fait-elle gagner du temps ?</span></p>
         </div>
         <div class="val">
           <div class="ic" style="background:#F1EEFD"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="12" rx="1.5"/><path d="M6 18h6"/></svg></div>
-          <h3><span data-ar>في كل مكان</span><span data-en>Everywhere you are</span></h3>
-          <p><span data-ar>على الويب والجوال، متزامن ويعمل حتى بدون إنترنت.</span><span data-en>Web and mobile, in sync — and it works offline too.</span></p>
+          <h3><span data-ar>في كل مكان</span><span data-en>Everywhere you are</span><span data-fr>Partout où vous êtes</span></h3>
+          <p><span data-ar>على الويب والجوال، متزامن ويعمل حتى بدون إنترنت.</span><span data-en>Web and mobile, in sync — and it works offline too.</span><span data-fr>Web et mobile, synchronisés, et même hors ligne.</span></p>
         </div>
       </div>
     </div>
@@ -486,8 +486,8 @@
     <div class="wrap">
       <div class="contact">
         <div>
-          <h2><span data-ar>نسعد بتواصلك</span><span data-en>We'd love to hear from you</span></h2>
-          <p><span data-ar>للدعم، أو الشراكات، أو اقتراح ميزة جديدة.</span><span data-en>For support, partnerships or a feature idea.</span></p>
+          <h2><span data-ar>نسعد بتواصلك</span><span data-en>We'd love to hear from you</span><span data-fr>Nous serions ravis de vous lire</span></h2>
+          <p><span data-ar>للدعم، أو الشراكات، أو اقتراح ميزة جديدة.</span><span data-en>For support, partnerships or a feature idea.</span><span data-fr>Pour l'assistance, les partenariats ou une idée de fonctionnalité.</span></p>
         </div>
         <a class="btn btn-primary" href="mailto:support@dgotix.com" dir="ltr">support@dgotix.com</a>
       </div>
@@ -500,10 +500,10 @@
     <img src="logo.svg" alt="DGOTIX">
     <nav>
       <a href="https://smartbudget.dgotix.com/">SmartBudget</a>
-      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span></a>
-      <a href="privacy.html"><span data-ar>سياسة الخصوصية</span><span data-en>Privacy</span></a>
-      <a href="terms.html"><span data-ar>شروط الاستخدام</span><span data-en>Terms</span></a>
-      <a href="refund.html"><span data-ar>سياسة الاسترجاع</span><span data-en>Refund policy</span></a>
+      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span><span data-fr>Tarifs</span></a>
+      <a href="privacy.html"><span data-ar>سياسة الخصوصية</span><span data-en>Privacy</span><span data-fr>Confidentialité</span></a>
+      <a href="terms.html"><span data-ar>شروط الاستخدام</span><span data-en>Terms</span><span data-fr>Conditions</span></a>
+      <a href="refund.html"><span data-ar>سياسة الاسترجاع</span><span data-en>Refund policy</span><span data-fr>Politique de remboursement</span></a>
     </nav>
     <span dir="ltr">© <span id="yr">2026</span> DGOTIX</span>
   </div>

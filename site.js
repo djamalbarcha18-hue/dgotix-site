@@ -1,27 +1,31 @@
-// dgotix.com: language switch, analytics chart and pricing switch.
+// dgotix.com: language menu (ar / en / fr), analytics chart and pricing switch.
   (function () {
-    var root = document.documentElement, btn = document.getElementById('lang');
+    var root = document.documentElement, sel = document.getElementById('lang');
+    var TITLE = { ar: 'DGOTIX — حلول إنتاجية رقمية | Digital Productivity Solutions', en: 'DGOTIX — Digital Productivity Solutions', fr: 'DGOTIX — Solutions de productivité numérique' };
+    function ok(l) { return l === 'ar' || l === 'en' || l === 'fr'; }
     function set(l) {
       root.lang = l; root.dir = l === 'ar' ? 'rtl' : 'ltr';
-      btn.textContent = l === 'ar' ? 'English' : 'العربية';
-      document.title = l === 'ar' ? 'DGOTIX — حلول إنتاجية رقمية | Digital Productivity Solutions' : 'DGOTIX — Digital Productivity Solutions';
+      sel.value = l;
+      document.title = TITLE[l];
       try { localStorage.setItem('dgotix-lang', l); } catch (e) {}
     }
     var saved = null; try { saved = localStorage.getItem('dgotix-lang'); } catch (e) {}
     var q = new URLSearchParams(location.search).get('lang');
-    set(q === 'en' || q === 'ar' ? q : saved || ((navigator.language || 'ar').slice(0, 2) === 'ar' ? 'ar' : 'en'));
-    btn.addEventListener('click', function () { set(root.lang === 'ar' ? 'en' : 'ar'); });
+    var nav = (navigator.language || 'ar').slice(0, 2);
+    set(ok(q) ? q : ok(saved) ? saved : ok(nav) ? nav : 'en');
+    sel.addEventListener('change', function () { set(sel.value); });
     document.getElementById('yr').textContent = new Date().getFullYear();
   })();
 (function () {
   // Illustrative demo account (QAR), Oct 2025 - Sep 2026: [income, expenses].
   var M = [[37500,28395],[37500,30757],[45500,28957],[37500,41661],[37500,31056],[37500,39749],[37500,23668],[37500,24258],[43500,24500],[37500,33688],[37500,24935],[37500,26051]];
-  var MON = {ar:['أكتوبر','نوفمبر','ديسمبر','يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر'], en:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep']};
+  var MON = {ar:['أكتوبر','نوفمبر','ديسمبر','يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر'], en:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'], fr:['oct.','nov.','déc.','janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.']};
   var T = {ar:{inc:'الدخل',exp:'المصاريف',sav:'المدّخرات',period:'الفترة',cur:'ر.ق',q:['الربع 4 · 2025','الربع 1 · 2026','الربع 2 · 2026','الربع 3 · 2026'],h:['أكتوبر – مارس','أبريل – سبتمبر'],y:['أكتوبر 2025 – سبتمبر 2026']},
-           en:{inc:'Income',exp:'Expenses',sav:'Savings',period:'Period',cur:'QAR',q:['Q4 2025','Q1 2026','Q2 2026','Q3 2026'],h:['Oct – Mar','Apr – Sep'],y:['Oct 2025 – Sep 2026']}};
+           en:{inc:'Income',exp:'Expenses',sav:'Savings',period:'Period',cur:'QAR',q:['Q4 2025','Q1 2026','Q2 2026','Q3 2026'],h:['Oct – Mar','Apr – Sep'],y:['Oct 2025 – Sep 2026']},
+           fr:{inc:'Revenus',exp:'Dépenses',sav:'Épargne',period:'Période',cur:'QAR',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct. – mars','avr. – sept.'],y:['oct. 2025 – sept. 2026']}};
   var per = 'm', NS = 'http://www.w3.org/2000/svg';
   var svg = document.getElementById('chart'), tip = document.getElementById('tip');
-  function lang() { return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
+  function lang() { var l = document.documentElement.lang; return l === 'en' || l === 'fr' ? l : 'ar'; }
   function groups() {
     var L = lang(), out = [], k = per === 'm' ? 1 : per === 'q' ? 3 : per === 'h' ? 6 : 12;
     for (var i = 0; i < 12; i += k) {
@@ -58,7 +62,7 @@
         var bx = b[2] < 0 ? c - gap / 2 - bw : c + gap / 2, top = y(b[0]), h = y(0) - top, r = Math.min(4, bw / 2);
         grp.appendChild(el('path', { class: 'bar', fill: b[1], d: 'M' + bx + ',' + y(0) + 'V' + (top + r) + 'Q' + bx + ',' + top + ' ' + (bx + r) + ',' + top + 'H' + (bx + bw - r) + 'Q' + (bx + bw) + ',' + top + ' ' + (bx + bw) + ',' + (top + r) + 'V' + y(0) + 'Z' }));
       });
-      if (!(narrow && per === 'm' && i % 2)) { var lt = el('text', { x: c, y: H - 14, 'text-anchor': 'middle' }); lt.textContent = narrow && per === 'q' ? (rtl ? ['الربع 4', 'الربع 1', 'الربع 2', 'الربع 3'] : ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26'])[i] : g.label; grp.appendChild(lt); }
+      if (!(narrow && per === 'm' && i % 2)) { var lt = el('text', { x: c, y: H - 14, 'text-anchor': 'middle' }); lt.textContent = narrow && per === 'q' ? ({ ar: ['الربع 4', 'الربع 1', 'الربع 2', 'الربع 3'], en: ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26'], fr: ['T4 25', 'T1 26', 'T2 26', 'T3 26'] })[L][i] : g.label; grp.appendChild(lt); }
       var hit = el('rect', { class: 'hit', x: c - cw / 2, y: 0, width: cw, height: H });
       grp.appendChild(hit);
       function show() {
@@ -93,7 +97,7 @@
     lb.textContent = short(G[last].sav); svg.appendChild(lb);
     // KPIs + table
     var LG = G[G.length - 1], tI = LG.inc, tE = LG.exp;
-    document.getElementById('kcap').textContent = (L === 'ar' ? (per === 'y' ? 'آخر 12 شهراً: ' : 'آخر فترة: ') : (per === 'y' ? 'Last 12 months: ' : 'Latest period: ')) + LG.label;
+    document.getElementById('kcap').textContent = ({ ar: per === 'y' ? 'آخر 12 شهراً: ' : 'آخر فترة: ', en: per === 'y' ? 'Last 12 months: ' : 'Latest period: ', fr: per === 'y' ? '12 derniers mois\u202f: ' : 'Dernière période\u202f: ' })[L] + LG.label;
     document.getElementById('kI').textContent = fmt(tI); document.getElementById('kE').textContent = fmt(tE);
     document.getElementById('kS').textContent = (tI - tE < 0 ? '−' : '') + fmt(Math.abs(tI - tE));
     ['kI', 'kE', 'kS'].forEach(function (id) { var s = document.createElement('small'); s.textContent = T[L].cur; document.getElementById(id).appendChild(s); });
@@ -117,17 +121,18 @@
     var btns = document.querySelectorAll('#pricing .seg button');
     function show(period) {
       btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.period === period)); });
-      var ar = document.documentElement.lang === 'ar';
+      var L = document.documentElement.lang;
+      var U = { ar: ['/ سنة', '/ شهر'], en: ['/ year', '/ month'], fr: ['/ an', '/ mois'] }[L] || ['/ year', '/ month'];
       document.querySelectorAll('#pricing .price[data-m]').forEach(function (el) {
         var y = period === 'yearly';
         el.querySelector('b').textContent = '$' + (y ? el.dataset.y : el.dataset.m);
-        el.querySelector('[data-u]').textContent = y ? (ar ? '/ سنة' : '/ year') : (ar ? '/ شهر' : '/ month');
-        var per = el.nextElementSibling;
-        per.textContent = y ? (ar ? 'أي ' + per.dataset.pm + '$ شهرياً' : 'that is $' + per.dataset.pm + ' a month') : '';
+        el.querySelector('[data-u]').textContent = y ? U[0] : U[1];
+        var per = el.nextElementSibling, pm = per.dataset.pm;
+        per.textContent = !y ? '' : L === 'ar' ? 'أي ' + pm + '$ شهرياً' : L === 'fr' ? 'soit ' + pm + '\u00a0$ par mois' : 'that is $' + pm + ' a month';
       });
       window.__period = period;
     }
     btns.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.period); }); });
     show('yearly');
-    document.getElementById('lang').addEventListener('click', function () { setTimeout(function () { show(window.__period || 'yearly'); }, 0); });
+    document.getElementById('lang').addEventListener('change', function () { setTimeout(function () { show(window.__period || 'yearly'); }, 0); });
   })();
