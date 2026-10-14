@@ -1,6 +1,8 @@
 /* Shared style of the legal pages (terms, privacy, refund). */
 @font-face{font-family:Tajawal;src:url(fonts/Tajawal-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:Tajawal;src:url(fonts/Tajawal-Bold.ttf) format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:'Noto Naskh Arabic';src:url(fonts/NotoNaskhArabic-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Naskh Arabic';src:url(fonts/NotoNaskhArabic-Bold.ttf) format('truetype');font-weight:700;font-display:swap}
 @font-face{font-family:Inter;src:url(fonts/Inter-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:Inter;src:url(fonts/Inter-SemiBold.ttf) format('truetype');font-weight:700;font-display:swap}
 :root{--bg:#F7F9FC;--surface:#FFFFFF;--ink:#0F172A;--body:#475569;--muted:#64748B;--line:#E2E8F0;--brand:#1680F7}
@@ -18,5 +20,6 @@ h2{font-size:1.1rem;margin:20px 0 6px}
 p,li{color:var(--body)}
 ul{padding-inline-start:20px}
 .meta{color:var(--muted);font-size:.9rem}
-[lang=en]{font-family:Inter,Tajawal,system-ui,sans-serif;line-height:1.65}
+[lang=en],[lang=tr]{font-family:Inter,Tajawal,system-ui,sans-serif;line-height:1.65}
+[lang=ur]{font-family:'Noto Naskh Arabic',Tajawal,system-ui,sans-serif;line-height:1.9}
 footer{color:var(--muted);font-size:.9rem;text-align:center}

@@ -1,10 +1,10 @@
-// dgotix.com: language menu (ar / en / fr / id / es), analytics chart and pricing switch.
+// dgotix.com: language menu (ar / en / fr / id / es / tr / ms / ur), analytics chart and pricing switch.
   (function () {
     var root = document.documentElement, sel = document.getElementById('lang');
-    var TITLE = { ar: 'DGOTIX — حلول إنتاجية رقمية | Digital Productivity Solutions', en: 'DGOTIX — Digital Productivity Solutions', fr: 'DGOTIX — Solutions de productivité numérique', id: 'DGOTIX — Solusi Produktivitas Digital', es: 'DGOTIX — Soluciones de productividad digital' };
-    function ok(l) { return l === 'ar' || l === 'en' || l === 'fr' || l === 'id' || l === 'es'; }
+    var TITLE = { ar: 'DGOTIX — حلول إنتاجية رقمية | Digital Productivity Solutions', en: 'DGOTIX — Digital Productivity Solutions', fr: 'DGOTIX — Solutions de productivité numérique', id: 'DGOTIX — Solusi Produktivitas Digital', es: 'DGOTIX — Soluciones de productividad digital', tr: 'DGOTIX — Dijital Verimlilik Çözümleri', ms: 'DGOTIX — Penyelesaian Produktiviti Digital', ur: 'DGOTIX — ڈیجیٹل پیداواری حل' };
+    function ok(l) { return Object.prototype.hasOwnProperty.call(TITLE, l); }
     function set(l) {
-      root.lang = l; root.dir = l === 'ar' ? 'rtl' : 'ltr';
+      root.lang = l; root.dir = l === 'ar' || l === 'ur' ? 'rtl' : 'ltr';
       sel.value = l;
       document.title = TITLE[l];
       try { localStorage.setItem('dgotix-lang', l); } catch (e) {}
@@ -19,15 +19,18 @@
 (function () {
   // Illustrative demo account (QAR), Oct 2025 - Sep 2026: [income, expenses].
   var M = [[37500,28395],[37500,30757],[45500,28957],[37500,41661],[37500,31056],[37500,39749],[37500,23668],[37500,24258],[43500,24500],[37500,33688],[37500,24935],[37500,26051]];
-  var MON = {ar:['أكتوبر','نوفمبر','ديسمبر','يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر'], en:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'], fr:['oct.','nov.','déc.','janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.'], id:['Okt','Nov','Des','Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep'], es:['oct','nov','dic','ene','feb','mar','abr','may','jun','jul','ago','sept']};
+  var MON = {ar:['أكتوبر','نوفمبر','ديسمبر','يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر'], en:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'], fr:['oct.','nov.','déc.','janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.'], id:['Okt','Nov','Des','Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep'], es:['oct','nov','dic','ene','feb','mar','abr','may','jun','jul','ago','sept'], tr:['Eki','Kas','Ara','Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl'], ms:['Okt','Nov','Dis','Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogo','Sep'], ur:['اکتوبر','نومبر','دسمبر','جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر']};
   var T = {ar:{inc:'الدخل',exp:'المصاريف',sav:'المدّخرات',period:'الفترة',cur:'ر.ق',q:['الربع 4 · 2025','الربع 1 · 2026','الربع 2 · 2026','الربع 3 · 2026'],h:['أكتوبر – مارس','أبريل – سبتمبر'],y:['أكتوبر 2025 – سبتمبر 2026']},
            en:{inc:'Income',exp:'Expenses',sav:'Savings',period:'Period',cur:'QAR',q:['Q4 2025','Q1 2026','Q2 2026','Q3 2026'],h:['Oct – Mar','Apr – Sep'],y:['Oct 2025 – Sep 2026']},
            fr:{inc:'Revenus',exp:'Dépenses',sav:'Épargne',period:'Période',cur:'QAR',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct. – mars','avr. – sept.'],y:['oct. 2025 – sept. 2026']},
            id:{inc:'Pemasukan',exp:'Pengeluaran',sav:'Tabungan',period:'Periode',cur:'QAR',q:['K4 2025','K1 2026','K2 2026','K3 2026'],h:['Okt – Mar','Apr – Sep'],y:['Okt 2025 – Sep 2026']},
-           es:{inc:'Ingresos',exp:'Gastos',sav:'Ahorro',period:'Periodo',cur:'QAR',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct – mar','abr – sept'],y:['oct 2025 – sept 2026']}};
+           es:{inc:'Ingresos',exp:'Gastos',sav:'Ahorro',period:'Periodo',cur:'QAR',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct – mar','abr – sept'],y:['oct 2025 – sept 2026']},
+           tr:{inc:'Gelir',exp:'Giderler',sav:'Birikim',period:'Dönem',cur:'QAR',q:['4. Çeyrek 2025','1. Çeyrek 2026','2. Çeyrek 2026','3. Çeyrek 2026'],h:['Eki – Mar','Nis – Eyl'],y:['Eki 2025 – Eyl 2026']},
+           ms:{inc:'Pendapatan',exp:'Perbelanjaan',sav:'Simpanan',period:'Tempoh',cur:'QAR',q:['S4 2025','S1 2026','S2 2026','S3 2026'],h:['Okt – Mac','Apr – Sep'],y:['Okt 2025 – Sep 2026']},
+           ur:{inc:'آمدنی',exp:'اخراجات',sav:'بچت',period:'مدت',cur:'QAR',q:['سہ ماہی 4 · 2025','سہ ماہی 1 · 2026','سہ ماہی 2 · 2026','سہ ماہی 3 · 2026'],h:['اکتوبر – مارچ','اپریل – ستمبر'],y:['اکتوبر 2025 – ستمبر 2026']}};
   var per = 'm', NS = 'http://www.w3.org/2000/svg';
   var svg = document.getElementById('chart'), tip = document.getElementById('tip');
-  function lang() { var l = document.documentElement.lang; return l === 'en' || l === 'fr' || l === 'id' || l === 'es' ? l : 'ar'; }
+  function lang() { var l = document.documentElement.lang; return T[l] ? l : 'ar'; }
   function groups() {
     var L = lang(), out = [], k = per === 'm' ? 1 : per === 'q' ? 3 : per === 'h' ? 6 : 12;
     for (var i = 0; i < 12; i += k) {
@@ -42,7 +45,7 @@
   function niceMax(v) { var p = Math.pow(10, Math.floor(Math.log10(v))), m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; }
 
   function render() {
-    var L = lang(), G = groups(), rtl = L === 'ar';
+    var L = lang(), G = groups(), rtl = L === 'ar' || L === 'ur';
     var W = Math.max(300, Math.round(svg.parentNode.clientWidth || 1000)), narrow = W < 600, H = narrow ? 300 : 380, padT = 14, padB = 40, padS = narrow ? 44 : 56, padE = 6;
     svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
     var lo = Math.min(0, Math.min.apply(null, G.map(function (g) { return g.sav; })));
@@ -64,7 +67,7 @@
         var bx = b[2] < 0 ? c - gap / 2 - bw : c + gap / 2, top = y(b[0]), h = y(0) - top, r = Math.min(4, bw / 2);
         grp.appendChild(el('path', { class: 'bar', fill: b[1], d: 'M' + bx + ',' + y(0) + 'V' + (top + r) + 'Q' + bx + ',' + top + ' ' + (bx + r) + ',' + top + 'H' + (bx + bw - r) + 'Q' + (bx + bw) + ',' + top + ' ' + (bx + bw) + ',' + (top + r) + 'V' + y(0) + 'Z' }));
       });
-      if (!(narrow && per === 'm' && i % 2)) { var lt = el('text', { x: c, y: H - 14, 'text-anchor': 'middle' }); lt.textContent = narrow && per === 'q' ? ({ ar: ['الربع 4', 'الربع 1', 'الربع 2', 'الربع 3'], en: ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26'], fr: ['T4 25', 'T1 26', 'T2 26', 'T3 26'], id: ['K4 25', 'K1 26', 'K2 26', 'K3 26'], es: ['T4 25', 'T1 26', 'T2 26', 'T3 26'] })[L][i] : g.label; grp.appendChild(lt); }
+      if (!(narrow && per === 'm' && i % 2)) { var lt = el('text', { x: c, y: H - 14, 'text-anchor': 'middle' }); lt.textContent = narrow && per === 'q' ? ({ ar: ['الربع 4', 'الربع 1', 'الربع 2', 'الربع 3'], en: ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26'], fr: ['T4 25', 'T1 26', 'T2 26', 'T3 26'], id: ['K4 25', 'K1 26', 'K2 26', 'K3 26'], es: ['T4 25', 'T1 26', 'T2 26', 'T3 26'], tr: ['Ç4 25', 'Ç1 26', 'Ç2 26', 'Ç3 26'], ms: ['S4 25', 'S1 26', 'S2 26', 'S3 26'], ur: ['سہ ماہی 4', 'سہ ماہی 1', 'سہ ماہی 2', 'سہ ماہی 3'] })[L][i] : g.label; grp.appendChild(lt); }
       var hit = el('rect', { class: 'hit', x: c - cw / 2, y: 0, width: cw, height: H });
       grp.appendChild(hit);
       function show() {
@@ -99,7 +102,7 @@
     lb.textContent = short(G[last].sav); svg.appendChild(lb);
     // KPIs + table
     var LG = G[G.length - 1], tI = LG.inc, tE = LG.exp;
-    document.getElementById('kcap').textContent = ({ ar: per === 'y' ? 'آخر 12 شهراً: ' : 'آخر فترة: ', en: per === 'y' ? 'Last 12 months: ' : 'Latest period: ', fr: per === 'y' ? '12 derniers mois\u202f: ' : 'Dernière période\u202f: ', id: per === 'y' ? '12 bulan terakhir: ' : 'Periode terakhir: ', es: per === 'y' ? 'Últimos 12 meses: ' : 'Último periodo: ' })[L] + LG.label;
+    document.getElementById('kcap').textContent = ({ ar: per === 'y' ? 'آخر 12 شهراً: ' : 'آخر فترة: ', en: per === 'y' ? 'Last 12 months: ' : 'Latest period: ', fr: per === 'y' ? '12 derniers mois\u202f: ' : 'Dernière période\u202f: ', id: per === 'y' ? '12 bulan terakhir: ' : 'Periode terakhir: ', es: per === 'y' ? 'Últimos 12 meses: ' : 'Último periodo: ', tr: per === 'y' ? 'Son 12 ay: ' : 'Son dönem: ', ms: per === 'y' ? '12 bulan terakhir: ' : 'Tempoh terakhir: ', ur: per === 'y' ? 'پچھلے 12 مہینے: ' : 'آخری مدت: ' })[L] + LG.label;
     document.getElementById('kI').textContent = fmt(tI); document.getElementById('kE').textContent = fmt(tE);
     document.getElementById('kS').textContent = (tI - tE < 0 ? '−' : '') + fmt(Math.abs(tI - tE));
     ['kI', 'kE', 'kS'].forEach(function (id) { var s = document.createElement('small'); s.textContent = T[L].cur; document.getElementById(id).appendChild(s); });
@@ -124,13 +127,13 @@
     function show(period) {
       btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.period === period)); });
       var L = document.documentElement.lang;
-      var U = { ar: ['/ سنة', '/ شهر'], en: ['/ year', '/ month'], fr: ['/ an', '/ mois'], id: ['/ tahun', '/ bulan'], es: ['/ año', '/ mes'] }[L] || ['/ year', '/ month'];
+      var U = { ar: ['/ سنة', '/ شهر'], en: ['/ year', '/ month'], fr: ['/ an', '/ mois'], id: ['/ tahun', '/ bulan'], es: ['/ año', '/ mes'], tr: ['/ yıl', '/ ay'], ms: ['/ tahun', '/ bulan'], ur: ['/ سال', '/ ماہ'] }[L] || ['/ year', '/ month'];
       document.querySelectorAll('#pricing .price[data-m]').forEach(function (el) {
         var y = period === 'yearly';
         el.querySelector('b').textContent = '$' + (y ? el.dataset.y : el.dataset.m);
         el.querySelector('[data-u]').textContent = y ? U[0] : U[1];
         var per = el.nextElementSibling, pm = per.dataset.pm;
-        per.textContent = !y ? '' : L === 'ar' ? 'أي ' + pm + '$ شهرياً' : L === 'fr' ? 'soit ' + pm + '\u00a0$ par mois' : L === 'id' ? 'atau $' + pm + ' per bulan' : L === 'es' ? 'o sea ' + pm + ' $ al mes' : 'that is $' + pm + ' a month';
+        per.textContent = !y ? '' : L === 'ar' ? 'أي ' + pm + '$ شهرياً' : L === 'fr' ? 'soit ' + pm + '\u00a0$ par mois' : L === 'id' ? 'atau $' + pm + ' per bulan' : L === 'es' ? 'o sea ' + pm + ' $ al mes' : L === 'tr' ? 'yani ayda $' + pm : L === 'ms' ? 'iaitu $' + pm + ' sebulan' : L === 'ur' ? 'یعنی $' + pm + ' ماہانہ' : 'that is $' + pm + ' a month';
       });
       window.__period = period;
     }
