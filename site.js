@@ -30,6 +30,7 @@
            ur:{inc:'آمدنی',exp:'اخراجات',sav:'بچت',period:'مدت',cur:'USD',q:['سہ ماہی 4 · 2025','سہ ماہی 1 · 2026','سہ ماہی 2 · 2026','سہ ماہی 3 · 2026'],h:['اکتوبر – مارچ','اپریل – ستمبر'],y:['اکتوبر 2025 – ستمبر 2026']}};
   var per = 'm', NS = 'http://www.w3.org/2000/svg';
   var svg = document.getElementById('chart'), tip = document.getElementById('tip');
+  if (!svg) return; // the page shows a screenshot of the app's chart instead
   function lang() { var l = document.documentElement.lang; return T[l] ? l : 'en'; }
   function groups() {
     var L = lang(), out = [], k = per === 'm' ? 1 : per === 'q' ? 3 : per === 'h' ? 6 : 12;
