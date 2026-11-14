@@ -1,7 +1,7 @@
 # dgotix.com
 
 The DGOTIX welcome page, served by GitHub Pages at https://dgotix.com/.
-A static, bilingual (Arabic / English) page with no build step.
+A static, multilingual (8 languages, English by default) page with no build step.
 
 - `index.html` — the page (styles and scripts inline; fonts in `fonts/`).
 - `smartbudget/` — `dgotix.com/smartbudget` sends visitors to https://smartbudget.dgotix.com/.

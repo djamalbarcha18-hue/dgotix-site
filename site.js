@@ -11,26 +11,26 @@
     }
     var saved = null; try { saved = localStorage.getItem('dgotix-lang'); } catch (e) {}
     var q = new URLSearchParams(location.search).get('lang');
-    var nav = (navigator.language || 'ar').slice(0, 2);
+    var nav = (navigator.language || 'en').slice(0, 2);
     set(ok(q) ? q : ok(saved) ? saved : ok(nav) ? nav : 'en');
     sel.addEventListener('change', function () { set(sel.value); });
     document.getElementById('yr').textContent = new Date().getFullYear();
   })();
 (function () {
-  // Illustrative demo account (QAR), Oct 2025 - Sep 2026: [income, expenses].
-  var M = [[37500,28395],[37500,30757],[45500,28957],[37500,41661],[37500,31056],[37500,39749],[37500,23668],[37500,24258],[43500,24500],[37500,33688],[37500,24935],[37500,26051]];
+  // Illustrative demo account (USD), Oct 2025 - Sep 2026: [income, expenses].
+  var M = [[3750,2840],[3750,3076],[4550,2896],[3750,4166],[3750,3106],[3750,3975],[3750,2367],[3750,2426],[4350,2450],[3750,3369],[3750,2494],[3750,2605]];
   var MON = {ar:['أكتوبر','نوفمبر','ديسمبر','يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر'], en:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'], fr:['oct.','nov.','déc.','janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.'], id:['Okt','Nov','Des','Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep'], es:['oct','nov','dic','ene','feb','mar','abr','may','jun','jul','ago','sept'], tr:['Eki','Kas','Ara','Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl'], ms:['Okt','Nov','Dis','Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogo','Sep'], ur:['اکتوبر','نومبر','دسمبر','جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر']};
-  var T = {ar:{inc:'الدخل',exp:'المصاريف',sav:'المدّخرات',period:'الفترة',cur:'ر.ق',q:['الربع 4 · 2025','الربع 1 · 2026','الربع 2 · 2026','الربع 3 · 2026'],h:['أكتوبر – مارس','أبريل – سبتمبر'],y:['أكتوبر 2025 – سبتمبر 2026']},
-           en:{inc:'Income',exp:'Expenses',sav:'Savings',period:'Period',cur:'QAR',q:['Q4 2025','Q1 2026','Q2 2026','Q3 2026'],h:['Oct – Mar','Apr – Sep'],y:['Oct 2025 – Sep 2026']},
-           fr:{inc:'Revenus',exp:'Dépenses',sav:'Épargne',period:'Période',cur:'QAR',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct. – mars','avr. – sept.'],y:['oct. 2025 – sept. 2026']},
-           id:{inc:'Pemasukan',exp:'Pengeluaran',sav:'Tabungan',period:'Periode',cur:'QAR',q:['K4 2025','K1 2026','K2 2026','K3 2026'],h:['Okt – Mar','Apr – Sep'],y:['Okt 2025 – Sep 2026']},
-           es:{inc:'Ingresos',exp:'Gastos',sav:'Ahorro',period:'Periodo',cur:'QAR',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct – mar','abr – sept'],y:['oct 2025 – sept 2026']},
-           tr:{inc:'Gelir',exp:'Giderler',sav:'Birikim',period:'Dönem',cur:'QAR',q:['4. Çeyrek 2025','1. Çeyrek 2026','2. Çeyrek 2026','3. Çeyrek 2026'],h:['Eki – Mar','Nis – Eyl'],y:['Eki 2025 – Eyl 2026']},
-           ms:{inc:'Pendapatan',exp:'Perbelanjaan',sav:'Simpanan',period:'Tempoh',cur:'QAR',q:['S4 2025','S1 2026','S2 2026','S3 2026'],h:['Okt – Mac','Apr – Sep'],y:['Okt 2025 – Sep 2026']},
-           ur:{inc:'آمدنی',exp:'اخراجات',sav:'بچت',period:'مدت',cur:'QAR',q:['سہ ماہی 4 · 2025','سہ ماہی 1 · 2026','سہ ماہی 2 · 2026','سہ ماہی 3 · 2026'],h:['اکتوبر – مارچ','اپریل – ستمبر'],y:['اکتوبر 2025 – ستمبر 2026']}};
+  var T = {ar:{inc:'الدخل',exp:'المصاريف',sav:'المدّخرات',period:'الفترة',cur:'USD',q:['الربع 4 · 2025','الربع 1 · 2026','الربع 2 · 2026','الربع 3 · 2026'],h:['أكتوبر – مارس','أبريل – سبتمبر'],y:['أكتوبر 2025 – سبتمبر 2026']},
+           en:{inc:'Income',exp:'Expenses',sav:'Savings',period:'Period',cur:'USD',q:['Q4 2025','Q1 2026','Q2 2026','Q3 2026'],h:['Oct – Mar','Apr – Sep'],y:['Oct 2025 – Sep 2026']},
+           fr:{inc:'Revenus',exp:'Dépenses',sav:'Épargne',period:'Période',cur:'USD',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct. – mars','avr. – sept.'],y:['oct. 2025 – sept. 2026']},
+           id:{inc:'Pemasukan',exp:'Pengeluaran',sav:'Tabungan',period:'Periode',cur:'USD',q:['K4 2025','K1 2026','K2 2026','K3 2026'],h:['Okt – Mar','Apr – Sep'],y:['Okt 2025 – Sep 2026']},
+           es:{inc:'Ingresos',exp:'Gastos',sav:'Ahorro',period:'Periodo',cur:'USD',q:['T4 2025','T1 2026','T2 2026','T3 2026'],h:['oct – mar','abr – sept'],y:['oct 2025 – sept 2026']},
+           tr:{inc:'Gelir',exp:'Giderler',sav:'Birikim',period:'Dönem',cur:'USD',q:['4. Çeyrek 2025','1. Çeyrek 2026','2. Çeyrek 2026','3. Çeyrek 2026'],h:['Eki – Mar','Nis – Eyl'],y:['Eki 2025 – Eyl 2026']},
+           ms:{inc:'Pendapatan',exp:'Perbelanjaan',sav:'Simpanan',period:'Tempoh',cur:'USD',q:['S4 2025','S1 2026','S2 2026','S3 2026'],h:['Okt – Mac','Apr – Sep'],y:['Okt 2025 – Sep 2026']},
+           ur:{inc:'آمدنی',exp:'اخراجات',sav:'بچت',period:'مدت',cur:'USD',q:['سہ ماہی 4 · 2025','سہ ماہی 1 · 2026','سہ ماہی 2 · 2026','سہ ماہی 3 · 2026'],h:['اکتوبر – مارچ','اپریل – ستمبر'],y:['اکتوبر 2025 – ستمبر 2026']}};
   var per = 'm', NS = 'http://www.w3.org/2000/svg';
   var svg = document.getElementById('chart'), tip = document.getElementById('tip');
-  function lang() { var l = document.documentElement.lang; return T[l] ? l : 'ar'; }
+  function lang() { var l = document.documentElement.lang; return T[l] ? l : 'en'; }
   function groups() {
     var L = lang(), out = [], k = per === 'm' ? 1 : per === 'q' ? 3 : per === 'h' ? 6 : 12;
     for (var i = 0; i < 12; i += k) {
